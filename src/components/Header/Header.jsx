@@ -4,6 +4,7 @@ import Compare from '../../assets/icon-compare.svg';
 import Cart from '../../assets/icon-cart.svg';
 import Favorite from '../../assets/icon-favorite.svg';
 import User from '../../assets/icon-user.svg';
+
 import './Header.css';
 import AutocompleteComponents from '../../Common/Autocomplete';
 import DarkNightMode from '../../Common/DarkNightMode';

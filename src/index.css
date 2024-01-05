@@ -21,6 +21,15 @@
    font-family: 'Inter', sans-serif;
 }
 
+a {
+   text-decoration: none;
+   text-decoration: none;
+   display: inline-block;
+}
+li {
+   list-style-type: none;
+}
+
 .dark {
    background-color: #1a202c;
    color: #ffffff;
