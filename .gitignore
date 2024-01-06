@@ -34,3 +34,7 @@ yarn.lock
 *.njsproj
 *.sln
 *.sw?
+
+
+# Contentlayer
+.contentlayer

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 // import SignUp from './Pages/SignUp';
@@ -7,6 +8,7 @@ import Login from './Pages/Login';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import ErrorPage from './Pages/ErrorPage';
+import MaintenancePage from './Pages/Maintainece';
 
 const FullScreenLayout = ({ children }) => {
    return <div>{children}</div>;
@@ -34,6 +36,7 @@ function App() {
                   </FullScreenLayout>
                }
             />
+
             <Route
                path='/*'
                element={
@@ -44,7 +47,14 @@ function App() {
             />
 
             {/* Add more routes as needed */}
-            <Route index element={<CommonLayout></CommonLayout>} />
+            <Route
+               index
+               element={
+                  <CommonLayout>
+                     <MaintenancePage />
+                  </CommonLayout>
+               }
+            />
          </Routes>
       </BrowserRouter>
    );
