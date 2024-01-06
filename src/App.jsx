@@ -64,6 +64,22 @@ function App() {
                   </FullScreenLayout>
                }
             />
+            <Route
+               path='/maintenance'
+               element={
+                  <FullScreenLayout>
+                     <MaintenancePage />
+                  </FullScreenLayout>
+               }
+            />
+            <Route
+               path='/error-500'
+               element={
+                  <FullScreenLayout>
+                     <Error500Page />
+                  </FullScreenLayout>
+               }
+            />
 
             <Route
                path='/*'
