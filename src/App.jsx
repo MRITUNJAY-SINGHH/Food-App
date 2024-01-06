@@ -7,8 +7,12 @@ import Login from './Pages/Login';
 // import ContactUs from './Pages/ContactUs';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import ErrorPage from './Pages/ErrorPage';
+import ErrorPage from './Pages/404Page';
 import MaintenancePage from './Pages/Maintainece';
+import Error500Page from './Pages/505Page';
+import SignUpPage from './Pages/SignUp';
+import ForgotPasswordPage from './Pages/ForgetPassword';
+import ResetPasswordPage from './Pages/ResetPassword';
 
 const FullScreenLayout = ({ children }) => {
    return <div>{children}</div>;
@@ -36,6 +40,30 @@ function App() {
                   </FullScreenLayout>
                }
             />
+            <Route
+               path='/sign-up'
+               element={
+                  <FullScreenLayout>
+                     <SignUpPage />
+                  </FullScreenLayout>
+               }
+            />
+            <Route
+               path='/forget-password'
+               element={
+                  <FullScreenLayout>
+                     <ForgotPasswordPage />
+                  </FullScreenLayout>
+               }
+            />
+            <Route
+               path='/reset-password'
+               element={
+                  <FullScreenLayout>
+                     <ResetPasswordPage />
+                  </FullScreenLayout>
+               }
+            />
 
             <Route
                path='/*'
@@ -47,14 +75,7 @@ function App() {
             />
 
             {/* Add more routes as needed */}
-            <Route
-               index
-               element={
-                  <CommonLayout>
-                     <MaintenancePage />
-                  </CommonLayout>
-               }
-            />
+            <Route index element={<CommonLayout></CommonLayout>} />
          </Routes>
       </BrowserRouter>
    );
