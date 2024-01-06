@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import settingIcon from '../assets/settings-sliders.svg';
 import favoriteIcon from '../assets/icon-favorite.svg';
 import signInIcon from '../assets/sign-in-alt.svg';
@@ -8,6 +8,7 @@ import labelIcon from '../assets/label.svg';
 import voucherIcon from '../assets/home-location-alt.svg';
 import userIcon from '../assets/icon-user.svg';
 import passwordIcon from '../assets/password.svg';
+import User from '../assets/icon-user.svg';
 
 function classNames(...classes) {
    return classes.filter(Boolean).join(' ');
@@ -35,8 +36,9 @@ export default function DropdownMenu() {
          <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 mx-3 py-2 text-sm font-semibold text-gray-900 transition-all duration-300 cursor-pointer'
+            className='flex items-center w-full justify-center gap-x-1.5 rounded-md bg-white px-3 mx-2 py-2 text-sm font-semibold text-gray-900 transition-all duration-300 cursor-pointer'
          >
+            <img src={User} alt='logo' />
             Account
          </div>
 
@@ -66,13 +68,13 @@ export default function DropdownMenu() {
                                  active
                                     ? 'bg-gray-100 text-gray-900'
                                     : 'text-gray-700',
-                                 'flex items-center px-4 py-2 text-sm transition-all duration-300'
+                                 'flex items-center px-4 py-2 text-sm transition-all duration-300 leading-6'
                               )}
                            >
                               <img
                                  src={menuItem.icon}
                                  alt='icons'
-                                 className='h-5 w-5 mr-2'
+                                 className='h-5 w-5 mr-2 '
                               />
                               {menuItem.text}
                            </Link>

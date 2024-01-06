@@ -11,6 +11,7 @@ import ForgotPasswordPage from './Pages/ForgetPassword';
 
 import { DarkModeProvider } from './Common/DarkModeProvider';
 import ChangePassword from './Pages/change-password';
+import Contact from './Pages/ContactUs';
 
 const FullScreenLayout = ({ children }) => {
    return <div>{children}</div>;
@@ -91,6 +92,14 @@ function App() {
 
                {/* Add more routes as needed */}
                <Route index element={<CommonLayout></CommonLayout>} />
+               <Route
+                  path='/contact-us'
+                  element={
+                     <CommonLayout>
+                        <Contact />
+                     </CommonLayout>
+                  }
+               />
             </Routes>
          </BrowserRouter>
       </DarkModeProvider>

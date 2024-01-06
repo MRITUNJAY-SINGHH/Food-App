@@ -3,19 +3,21 @@ import Logo from '../../assets/logo.svg';
 import Compare from '../../assets/icon-compare.svg';
 import Cart from '../../assets/icon-cart.svg';
 import Favorite from '../../assets/icon-favorite.svg';
-import User from '../../assets/icon-user.svg';
 import './Header.css';
 import AutocompleteComponents from '../../Common/Autocomplete';
 import DarkNightMode from '../../Common/DarkNightMode';
 import DropdownMenu from '../../Common/DropdownUser';
 import Navbar from './Navbar/Navbar';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
    return (
       <>
          <div className='header flex justify-between items-center mx-2 my-4 pt-[20px] pb-[30px]'>
             <div className='logo flex justify-center items-center w-[9%]'>
-               <img src={Logo} alt='logo' className='h-11' />
+               <Link to='/'>
+                  <img src={Logo} alt='logo' className='h-11' />
+               </Link>
             </div>
             <div className='Search h-11 flex items-center w-[45%] mx-5 my-autocomplete'>
                <AutocompleteComponents />
@@ -61,7 +63,6 @@ const Header = () => {
                   </span>
                </div>
                <div className='flex justify-center item-center  relative  cursor-pointer'>
-                  <img src={User} alt='logo' />
                   <DropdownMenu />
                </div>
 
