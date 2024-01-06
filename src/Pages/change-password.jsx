@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IoMdKey } from 'react-icons/io';
 
-const ResetPasswordPage = () => {
+const ChangePassword = () => {
    const [newPassword, setNewPassword] = useState('');
    const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -19,7 +19,7 @@ const ResetPasswordPage = () => {
          <div className='flex items-center mb-4'>
             <IoMdKey className='text-4xl text-blue-700 mr-2' />
             <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>
-               Reset Your Password
+               Change Your Password
             </h2>
          </div>
          {/* Card */}
@@ -81,4 +81,4 @@ const ResetPasswordPage = () => {
    );
 };
 
-export default ResetPasswordPage;
+export default ChangePassword;

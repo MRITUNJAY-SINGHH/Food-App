@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import settingIcon from '../assets/settings-sliders.svg';
 import favoriteIcon from '../assets/icon-favorite.svg';
 import signInIcon from '../assets/sign-in-alt.svg';
@@ -13,21 +14,20 @@ function classNames(...classes) {
 }
 
 const menuItems = [
-   { text: 'My Account', icon: userIcon },
-   { text: 'Order Tracking', icon: voucherIcon },
-   { text: 'My Voucher', icon: labelIcon },
-   { text: 'My Wishlist', icon: favoriteIcon },
-   { text: 'Setting', icon: settingIcon },
-   { text: 'Login', icon: signInIcon },
-   { text: 'Change Password', icon: passwordIcon },
+   { text: 'My Account', icon: userIcon, path: '/my-account' },
+   { text: 'Order Tracking', icon: voucherIcon, path: '/order-tracking' },
+   { text: 'My Voucher', icon: labelIcon, path: '/my-voucher' },
+   { text: 'My Wishlist', icon: favoriteIcon, path: '/my-wishlist' },
+   { text: 'Setting', icon: settingIcon, path: '/settings' },
+   { text: 'Login', icon: signInIcon, path: '/login' },
+   { text: 'Change Password', icon: passwordIcon, path: '/change-password' },
 ];
 
 export default function DropdownMenu() {
    const [isHovered, setIsHovered] = useState(false);
 
    const handleItemClick = () => {
-      // Add your navigation logic here
-      console.log('Navigate to the desired section');
+      setIsHovered(false);
    };
 
    return (
@@ -35,7 +35,7 @@ export default function DropdownMenu() {
          <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 transition-all duration-300 cursor-pointer'
+            className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 mx-3 py-2 text-sm font-semibold text-gray-900 transition-all duration-300 cursor-pointer'
          >
             Account
          </div>
@@ -59,8 +59,8 @@ export default function DropdownMenu() {
                   {menuItems.map((menuItem, index) => (
                      <Menu.Item key={index}>
                         {({ active }) => (
-                           <a
-                              href='#'
+                           <Link
+                              to={menuItem.path}
                               onClick={handleItemClick}
                               className={classNames(
                                  active
@@ -75,7 +75,7 @@ export default function DropdownMenu() {
                                  className='h-5 w-5 mr-2'
                               />
                               {menuItem.text}
-                           </a>
+                           </Link>
                         )}
                      </Menu.Item>
                   ))}
