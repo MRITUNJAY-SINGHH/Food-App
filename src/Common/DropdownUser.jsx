@@ -9,6 +9,7 @@ import voucherIcon from '../assets/home-location-alt.svg';
 import userIcon from '../assets/icon-user.svg';
 import passwordIcon from '../assets/password.svg';
 import User from '../assets/icon-user.svg';
+import { FiChevronDown } from 'react-icons/fi'; // Import arrow-down icon
 
 function classNames(...classes) {
    return classes.filter(Boolean).join(' ');
@@ -25,25 +26,29 @@ const menuItems = [
 ];
 
 export default function DropdownMenu() {
-   const [isHovered, setIsHovered] = useState(false);
+   const [isOpen, setIsOpen] = useState(false);
+
+   const handleButtonClick = () => {
+      setIsOpen(!isOpen);
+   };
 
    const handleItemClick = () => {
-      setIsHovered(false);
+      setIsOpen(false);
    };
 
    return (
       <Menu as='div' className='relative inline-block text-left'>
-         <div
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            className='flex items-center w-full justify-center gap-x-1.5 rounded-md bg-white px-3 mx-2 py-2 text-sm font-semibold text-gray-900 transition-all duration-300 cursor-pointer'
+         <button
+            onClick={handleButtonClick}
+            className='flex items-center w-full justify-center gap-x-1.5 rounded-md bg-white px-1 mx-2 py-2 text-sm font-semibold text-gray-900 transition-all duration-300 cursor-pointer'
          >
             <img src={User} alt='logo' />
             Account
-         </div>
+            <FiChevronDown className='ml-1 text-gray-700' />{' '}
+         </button>
 
          <Transition
-            show={isHovered}
+            show={isOpen}
             as={Fragment}
             enter='transition ease-out duration-200'
             enterFrom='opacity-0 scale-95'
@@ -52,11 +57,7 @@ export default function DropdownMenu() {
             leaveFrom='opacity-100 scale-100'
             leaveTo='opacity-0 scale-95'
          >
-            <Menu.Items
-               className='absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'
-               onMouseEnter={() => setIsHovered(true)}
-               onMouseLeave={() => setIsHovered(false)}
-            >
+            <Menu.Items className='absolute right-0  z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
                <div className='py-1'>
                   {menuItems.map((menuItem, index) => (
                      <Menu.Item key={index}>

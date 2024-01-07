@@ -13,7 +13,7 @@ const Contact = () => {
 
    return (
       <>
-         <div className='contact-wrapper bg-gray-100 py-10'>
+         <div className='contact-wrapper bg-gray-100 py-10 dark:bg-gray-900'>
             <form className='w-full' onSubmit={handleSubmit}>
                <div>
                   <iframe
@@ -24,36 +24,45 @@ const Contact = () => {
                      allowFullScreen=''
                      loading='lazy'
                      referrerPolicy='no-referrer-when-downgrade'
-                     className='rounded-md overflow-hidden'
+                     className='rounded-md overflow-hidden shadow-xl dark:bg-gray-900'
                   />
                </div>
 
-               <div className='flex justify-around items-start mt-10'>
-                  <div className='w-[50%]'>
-                     <div className='bg-white p-8 rounded-md'>
+               <div className='flex justify-around items-start mt-10 dark:bg-gray-900'>
+                  <div className='w-[50%] dark:bg-gray-900 dark:text-white'>
+                     <div className='bg-white p-8 rounded-md  dark:bg-gray-900 dark:text-white'>
                         <h3 className='text-3xl font-bold mb-6'>Contact</h3>
                         <div className='flex flex-col gap-6'>
                            <input
                               type='text'
-                              className='border p-2 rounded-md'
-                              placeholder='Enter Your Name'
+                              name='text'
+                              id='text'
+                              className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                              placeholder='enter your name'
+                              required
                            />
                            <input
                               type='email'
-                              className='border p-2 rounded-md'
-                              placeholder='Enter Your Email'
+                              name='email'
+                              id='email'
+                              className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                              placeholder='email@email.com'
+                              required
                            />
                            <input
-                              type='text'
-                              className='border p-2 rounded-md'
-                              placeholder='Enter Your Mobile-No'
+                              type='number'
+                              name='number'
+                              id='number'
+                              className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                              placeholder='Enter your mobile no'
+                              required
                            />
                            <textarea
                               name=''
                               id=''
                               cols='30'
                               rows='10'
-                              className='border p-2 rounded-md'
+                              className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                               placeholder='Comment'
                            ></textarea>
                            <button
@@ -67,7 +76,7 @@ const Contact = () => {
                   </div>
 
                   <div className='w-[30%]'>
-                     <div className='bg-white p-8 rounded-md h-full flex flex-col justify-between'>
+                     <div className='bg-white dark:bg-gray-900 text-black dark:text-white p-8 rounded-md h-full flex flex-col justify-between'>
                         <div>
                            <h3 className='text-3xl font-bold mb-6'>
                               Get in touch with us
@@ -83,7 +92,7 @@ const Contact = () => {
                                  <AiOutlinePhone size={'20px'} />
                                  <a
                                     href='tel:+91 7065429235'
-                                    className='text-blue-500'
+                                    className='dark:text-white text-black'
                                  >
                                     +91 7065429235
                                  </a>
@@ -92,7 +101,7 @@ const Contact = () => {
                                  <AiOutlineMail size={'20px'} />
                                  <a
                                     href='mailto:mritunjays447@gmail.com'
-                                    className='text-blue-500'
+                                    className='dark:text-white text-black'
                                  >
                                     mritunjays447@gmail.com
                                  </a>
