@@ -19,14 +19,14 @@ const Header = () => {
                   <img src={Logo} alt='logo' className='h-11' />
                </Link>
             </div>
-            <div className='Search h-11 flex items-center w-[45%] mx-5 my-autocomplete'>
+            <div className='Search  h-11 flex items-center w-[45%] mx-5 my-autocomplete'>
                <AutocompleteComponents />
 
                <input
                   id='search-input'
                   type='text'
                   placeholder='Search for food items, e.g., apples, bread, milk...'
-                  className='outline-none flex-1 dark:bg-gray-900 dark:text-white'
+                  className='outline-none flex-1 dark:bg-gray-900 dark:text-white text-red placeholder-black dark:placeholder-black'
                />
 
                <div className='search-icon cursor-pointer dark:text-white'>

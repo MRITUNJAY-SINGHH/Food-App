@@ -56,7 +56,9 @@
    margin-right: 10px;
    color: #29a56c;
 }
-
+.dark input::placeholder {
+   color: white;
+}
 .NavbarLeft {
    line-height: 44px;
    border-radius: 5px;
