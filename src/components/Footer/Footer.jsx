@@ -155,7 +155,7 @@ const Footer = () => {
                </div>
             </div>
          </footer>
-         <footer className='py-3 dark:bg-gray-800 shadow-lg dark:shadow-none'>
+         <footer className='py-3 dark:bg-gray-800 '>
             <div className='flex justify-center items-center'>
                <p className='text-black dark:text-white text-center mb-0'>
                   &copy;{new Date().getFullYear()} Powered by Mritunjay Singh
