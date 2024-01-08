@@ -32,14 +32,14 @@ function App() {
       <DarkModeProvider>
          <BrowserRouter>
             <Routes>
-               <Route
+               {/* <Route
                   path='/login'
                   element={
                      <FullScreenLayout>
                         <Login />
                      </FullScreenLayout>
                   }
-               />
+               /> */}
                <Route
                   path='/sign-up'
                   element={
@@ -97,6 +97,14 @@ function App() {
                   element={
                      <CommonLayout>
                         <Contact />
+                     </CommonLayout>
+                  }
+               />
+               <Route
+                  path='/login'
+                  element={
+                     <CommonLayout>
+                        <Login />
                      </CommonLayout>
                   }
                />
