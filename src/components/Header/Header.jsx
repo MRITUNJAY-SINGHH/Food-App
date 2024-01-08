@@ -41,7 +41,7 @@ const Header = () => {
                      <span className='text-sm font-semibold dark:text-white text-black'>
                         Compare
                      </span>
-                     <span className='absolute top-[-20px] left-2 bg-[#29a56c] dark:bg-white text-black dark:text-black rounded-full h-7 w-7 flex items-center justify-center text-xs font-bold'>
+                     <span className='absolute top-[-20px] left-2 bg-[#29a56c] dark:bg-white text-white dark:text-black rounded-full h-7 w-7 flex items-center justify-center text-xs font-bold'>
                         6
                      </span>
                   </div>
@@ -53,7 +53,7 @@ const Header = () => {
                      <span className='text-sm font-semibold dark:text-white text-black'>
                         Wishlist
                      </span>
-                     <span className='absolute top-[-20px] left-0 bg-[#29a56c] dark:bg-white text-black dark:text-black rounded-full h-7 w-7 flex items-center justify-center text-xs font-bold'>
+                     <span className='absolute top-[-20px] left-0 bg-[#29a56c] dark:bg-white text-white dark:text-black rounded-full h-7 w-7 flex items-center justify-center text-xs font-bold'>
                         6
                      </span>
                   </div>
@@ -65,7 +65,7 @@ const Header = () => {
                      <span className='text-sm font-semibold dark:text-white text-black'>
                         Cart
                      </span>
-                     <span className='absolute top-[-20px] left-1 bg-[#29a56c] dark:bg-white text-black dark:text-black rounded-full h-7 w-7 flex items-center justify-center text-xs font-bold'>
+                     <span className='absolute top-[-20px] left-1 bg-[#29a56c] dark:bg-white  dark:text-black text-white rounded-full h-7 w-7 flex items-center justify-center text-xs font-bold'>
                         6
                      </span>
                   </div>

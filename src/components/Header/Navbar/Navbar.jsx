@@ -1,33 +1,48 @@
+import { Link } from 'react-router-dom';
+import { FaBars, FaFire, FaShoppingBasket } from 'react-icons/fa';
 import '../Header.css';
+import { useState } from 'react';
+import Apps from '../../../assets/apps.svg';
+
 const Navbar = () => {
+   const NavbarData = [
+      {
+         id: 1,
+         title: 'Deals',
+         link: '/Deals',
+         icon: <FaBars />,
+      },
+      {
+         id: 2,
+         title: 'Home',
+         link: '/',
+         icon: <FaFire />,
+      },
+      {
+         id: 3,
+         title: 'About',
+         link: '/About',
+         icon: <FaShoppingBasket />,
+      },
+      {
+         id: 4,
+         title: 'Shop',
+         link: '/shop',
+         icon: <FaShoppingBasket />,
+         hasDropdown: true, // Add this property to indicate that there's a dropdown
+      },
+   ];
+
+   const [showShopDropdown, setShowShopDropdown] = useState(false);
+
+   const toggleShopDropdown = () => {
+      setShowShopDropdown(!showShopDropdown);
+   };
    return (
       <div className='NavbarBorder'>
          <div className='flex justify-between items-center mx-2 my-4'>
             <div className='NavbarLeft  flex justify-center items-center text-white'>
-               <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  id='Outline'
-                  className='mr-2'
-                  viewBox='0 0 24 24'
-                  width='20px'
-               >
-                  <path
-                     fill='white'
-                     d='M7,0H4A4,4,0,0,0,0,4V7a4,4,0,0,0,4,4H7a4,4,0,0,0,4-4V4A4,4,0,0,0,7,0ZM9,7A2,2,0,0,1,7,9H4A2,2,0,0,1,2,7V4A2,2,0,0,1,4,2H7A2,2,0,0,1,9,4Z'
-                  />
-                  <path
-                     fill='white'
-                     d='M20,0H17a4,4,0,0,0-4,4V7a4,4,0,0,0,4,4h3a4,4,0,0,0,4-4V4A4,4,0,0,0,20,0Zm2,7a2,2,0,0,1-2,2H17a2,2,0,0,1-2-2V4a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2Z'
-                  />
-                  <path
-                     fill='white'
-                     d='M7,13H4a4,4,0,0,0-4,4v3a4,4,0,0,0,4,4H7a4,4,0,0,0,4-4V17A4,4,0,0,0,7,13Zm2,7a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V17a2,2,0,0,1,2-2H7a2,2,0,0,1,2,2Z'
-                  />
-                  <path
-                     fill='white'
-                     d='M20,13H17a4,4,0,0,0-4,4v3a4,4,0,0,0,4,4h3a4,4,0,0,0,4-4V17A4,4,0,0,0,20,13Zm2,7a2,2,0,0,1-2,2H17a2,2,0,0,1-2-2V17a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2Z'
-                  />
-               </svg>
+               <img src={Apps} alt='logo' className='mr-2 h-5' />
                <h3 className='capitalize'>Browser All Categories</h3>
 
                <svg
@@ -44,7 +59,33 @@ const Navbar = () => {
                   </g>
                </svg>
             </div>
-            <div className='NavbarRight'></div>
+            <div className='NavbarRight'>
+               <ul className='flex justify-between items-center'>
+                  {NavbarData.map((item) => (
+                     <li key={item.id}>
+                        <button
+                           onClick={
+                              item.hasDropdown ? toggleShopDropdown : null
+                           }
+                        >
+                           <Link to={item.link}>
+                              {item.icon}
+                              {item.title}
+                           </Link>
+                           {/* Dropdown content for the "Shop" section */}
+                           {item.hasDropdown && showShopDropdown && (
+                              <div className='dropdown-content'>
+                                 {/* Add your dropdown content here */}
+                                 <Link to='/category1'>Category 1</Link>
+                                 <Link to='/category2'>Category 2</Link>
+                                 {/* Add more categories as needed */}
+                              </div>
+                           )}
+                        </button>
+                     </li>
+                  ))}
+               </ul>
+            </div>
             <div className='NavbarCenter'></div>
          </div>
       </div>

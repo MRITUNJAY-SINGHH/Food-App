@@ -44,20 +44,24 @@ export default function DropdownMenu() {
          >
             <img src={User} alt='logo' />
             Account
-            <FiChevronDown className='ml-1 text-gray-700' />{' '}
+            <FiChevronDown
+               className={`ml-1 text-gray-700 transform ${
+                  isOpen ? 'rotate-180' : 'rotate-0'
+               } transition-transform duration-300`}
+            />
          </button>
 
          <Transition
             show={isOpen}
             as={Fragment}
-            enter='transition ease-out duration-200'
+            enter='transition ease-out duration-300'
             enterFrom='opacity-0 scale-95'
             enterTo='opacity-100 scale-100'
-            leave='transition ease-in duration-150'
+            leave='transition ease-in duration-200'
             leaveFrom='opacity-100 scale-100'
             leaveTo='opacity-0 scale-95'
          >
-            <Menu.Items className='absolute right-0  z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+            <Menu.Items className='absolute right-[-10px]  z-10 mt-4 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
                <div className='py-1'>
                   {menuItems.map((menuItem, index) => (
                      <Menu.Item key={index}>
@@ -69,13 +73,13 @@ export default function DropdownMenu() {
                                  active
                                     ? 'bg-gray-100 text-gray-900'
                                     : 'text-gray-700',
-                                 'flex items-center px-4 py-2 text-sm transition-all duration-300 leading-6'
+                                 'flex items-center px-4 py-2 text-sm transition-all duration-300 leading-7'
                               )}
                            >
                               <img
                                  src={menuItem.icon}
                                  alt='icons'
-                                 className='h-5 w-5 mr-2 '
+                                 className='h-5 w-5 mr-2'
                               />
                               {menuItem.text}
                            </Link>
