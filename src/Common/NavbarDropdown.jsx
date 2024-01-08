@@ -11,10 +11,10 @@ const Dropdown = ({ title, items, icon, submenuIcon }) => {
    };
 
    return (
-      <div className='relative group dark:bg-gray-900 text-black dark:text-white'>
+      <div className='relative group  text-black dark:text-white'>
          <button
             onClick={handleToggleDropdown}
-            className='hover:text-green-600 focus:outline-none flex items-center whitespace-nowrap'
+            className='hover:text-green-600 dark:hover:text-white focus:outline-none flex items-center whitespace-nowrap'
          >
             {title}
             {icon && icon}
@@ -29,13 +29,16 @@ const Dropdown = ({ title, items, icon, submenuIcon }) => {
             )}
          </button>
          {isDropdownOpen && (
-            <div className='dark:bg-gray-900 text-black dropdown_menu absolute left-full top-0 mt-2 py-4 bg-white border rounded-md shadow-lg z-10 transition-all duration-500 sub-menu'>
+            <div className='dark:bg-gray-900 text-black dropdown_menu absolute left-[-50px] top-11  mt-2 py-4 bg-white border rounded-md shadow-lg z-10 transition-all duration-500 sub-menu'>
                <ul className='dropdown_menu_list space-y-1 text-gray-700 dark:text-white dark:border-none '>
                   {items.map((item, index) => (
-                     <li key={index} className='dropdown_menu_list_item'>
+                     <li
+                        key={index}
+                        className='dropdown_menu_list_item flex items-center hover:bg-gray-200 dark:hover:bg-orange-800'
+                     >
                         <Link
                            to={item.link}
-                           className=' px-4 py-2 hover:bg-gray-200 dark:hover:bg-orange-800 rounded-md transition-all duration-300 flex justify-center items-center'
+                           className=' px-4 py-2  rounded-md transition-all duration-300 flex justify-between items-center'
                         >
                            {item.name}
                            {submenuIcon && submenuIcon}
