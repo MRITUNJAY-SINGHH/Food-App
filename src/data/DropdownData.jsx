@@ -18,33 +18,6 @@ export const shopDropdownData = {
       { name: 'Shop List – Right Sidebar', link: '/shop-list-right' },
       { name: 'Shop List – Left Sidebar', link: '/shop-list-left' },
       { name: 'Shop - Wide', link: '/shop-fullwidth' },
-      {
-         name: 'Single Product',
-         link: '/single-product',
-         submenu: [
-            { name: 'Product – Right Sidebar', link: '/shop-product-right' },
-            { name: 'Product – Left Sidebar', link: '/shop-product-left' },
-            { name: 'Product – No sidebar', link: '/shop-product-full' },
-            { name: 'Product – Vendor Info', link: '/shop-product-vendor' },
-         ],
-      },
-      { name: 'Shop – Filter', link: '/shop-filter' },
-      { name: 'Shop – Wishlist', link: '/shop-wishlist' },
-      { name: 'Shop – Cart', link: '/shop-cart' },
-      { name: 'Shop – Checkout', link: '/shop-checkout' },
-      { name: 'Shop – Compare', link: '/shop-compare' },
-      {
-         name: 'Shop Invoice',
-         link: '/shop-invoice',
-         submenu: [
-            { name: 'Shop Invoice 1', link: '/shop-invoice-1' },
-            { name: 'Shop Invoice 2', link: '/shop-invoice-2' },
-            { name: 'Shop Invoice 3', link: '/shop-invoice-3' },
-            { name: 'Shop Invoice 4', link: '/shop-invoice-4' },
-            { name: 'Shop Invoice 5', link: '/shop-invoice-5' },
-            { name: 'Shop Invoice 6', link: '/shop-invoice-6' },
-         ],
-      },
    ],
 };
 
@@ -55,15 +28,6 @@ export const blogDropdownData = {
       { name: 'Blog Category List', link: '/blog-category-list' },
       { name: 'Blog Category Big', link: '/blog-category-big' },
       { name: 'Blog Category Wide', link: '/blog-category-fullwidth' },
-      {
-         name: 'Single Post',
-         link: '/single-post',
-         submenu: [
-            { name: 'Left Sidebar', link: '/blog-post-left' },
-            { name: 'Right Sidebar', link: '/blog-post-right' },
-            { name: 'No Sidebar', link: '/blog-post-fullwidth' },
-         ],
-      },
    ],
 };
 
