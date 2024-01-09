@@ -47,3 +47,49 @@ export const pagesDropdownData = {
       { name: '404 Page', link: '/page-404.html' },
    ],
 };
+
+export const megaMenuData = [
+   {
+      title: 'Fruit & Vegetables',
+      submenus: [
+         { name: 'Meat & Poultry', link: 'shop-product-right.html' },
+         { name: 'Fresh Vegetables', link: 'shop-product-right.html' },
+         { name: 'Herbs & Seasonings', link: 'shop-product-right.html' },
+         { name: 'Cuts & Sprouts', link: 'shop-product-right.html' },
+         { name: 'Exotic Fruits & Veggies', link: 'shop-product-right.html' },
+         { name: 'Packaged Produce', link: 'shop-product-right.html' },
+      ],
+   },
+   {
+      title: 'Breakfast & Dairy',
+      submenus: [
+         { name: 'Milk & Flavoured Milk', link: 'shop-product-right.html' },
+         { name: 'Butter and Margarine', link: 'shop-product-right.html' },
+         { name: 'Eggs Substitutes', link: 'shop-product-right.html' },
+         { name: 'Marmalades', link: 'shop-product-right.html' },
+         { name: 'Sour Cream', link: 'shop-product-right.html' },
+         { name: 'Cheese', link: 'shop-product-right.html' },
+      ],
+   },
+   {
+      title: 'Meat & Seafood',
+      submenus: [
+         { name: 'Breakfast Sausage', link: 'shop-product-right.html' },
+         { name: 'Dinner Sausage', link: 'shop-product-right.html' },
+         { name: 'Chicken', link: 'shop-product-right.html' },
+         { name: 'Sliced Deli Meat', link: 'shop-product-right.html' },
+         { name: 'Wild Caught Fillets', link: 'shop-product-right.html' },
+         { name: 'Crab and Shellfish', link: 'shop-product-right.html' },
+      ],
+   },
+   {
+      title: 'Hot Deals',
+      image: '../assets/banner-menu.png',
+      content: {
+         title: "Don't miss Trending",
+         price: 'Save to 50%',
+         discount: '25% off',
+         link: 'shop-product-right.html',
+      },
+   },
+];

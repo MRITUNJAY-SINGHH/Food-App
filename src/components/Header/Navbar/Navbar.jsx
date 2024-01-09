@@ -12,7 +12,9 @@ import {
    pagesDropdownData,
    vendorsDropdownData,
    shopDropdownData,
+   megaMenuData,
 } from '../../../data/DropdownData';
+import MegaDropDown from '../../../Common/MegaDropdown';
 
 const Navbar = () => {
    return (
@@ -43,11 +45,8 @@ const Navbar = () => {
                         items={vendorsDropdownData.items}
                      />
                   </li>
-                  <li>
-                     <Link>
-                        Mega Menu
-                        <IoIosArrowDown className='inline-block ml-1' />
-                     </Link>
+                  <li className='mega'>
+                     <MegaDropDown title='Mega Menu' items={megaMenuData} />
                   </li>
                   <li className='group relative'>
                      <Dropdown title='Blogs' items={blogDropdownData.items} />
