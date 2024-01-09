@@ -1,10 +1,11 @@
-import React, { useState, useRef } from 'react';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+/* eslint-disable react/prop-types */
+import { useState, useRef } from 'react';
+import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
-import bannerImage from '../assets/banner-menu.png';
+import '../index.css';
 
-const MegaDropDown = ({ title, items, icon }) => {
+const MegaDropDown = ({ title, items, icon, submenuIcon }) => {
    const [isSubmenuOpen, setSubmenuOpen] = useState(false);
    const dropdownRef = useRef(null);
 
@@ -20,52 +21,71 @@ const MegaDropDown = ({ title, items, icon }) => {
       setSubmenuOpen(false);
    };
 
+   const handleIconMouseEnter = () => {
+      setSubmenuOpen(true);
+   };
+
    return (
-      <div className='mega relative group'>
-         <Link
+      <div className='relative group text-black dark:text-white z-50'>
+         <button
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleToggleSubmenu}
-            className='hover:text-green-600 dark:hover:text-white flex items-center whitespace-nowrap'
+            className='hover:text-green-600 dark:hover:text-white focus:outline-none flex items-center whitespace-nowrap'
          >
             {title}
+            {icon && <span className='ml-1 cursor-pointer'>{icon}</span>}
             {isSubmenuOpen ? (
                <IoIosArrowUp className='inline-block ml-1' />
             ) : (
                <IoIosArrowDown className='inline-block ml-1' />
             )}
-         </Link>
+         </button>
          <Transition
             show={isSubmenuOpen}
-            enter='transition ease-out duration-300'
-            enterFrom='opacity-0 transform scale-95'
-            enterTo='opacity-100 transform scale-100'
-            leave='transition ease-in duration-200'
-            leaveFrom='opacity-100 transform scale-100'
-            leaveTo='opacity-0 transform scale-95'
+            enter='transition ease-out duration-200'
+            enterFrom='transform opacity-0 scale-95'
+            enterTo='transform opacity-100 scale-100'
+            leave='transition ease-in duration-150'
+            leaveFrom='transform opacity-100 scale-100'
+            leaveTo='transform opacity-0 scale-95'
          >
             <div
                onMouseEnter={handleMouseEnter}
                onMouseLeave={handleMouseLeave}
-               className='dropdown_Menu MegaMenu flex justify-between items-center'
+               className='dark:bg-gray-900 text-black dropdown_menu absolute left-[-60px] top-4 mt-2 py-4 bg-white border rounded-md shadow-lg z-10 transition-all duration-500 sub-menu'
                ref={dropdownRef}
             >
-               {items.map((item, index) => (
-                  <div key={index}>
-                     <h3 className='text-[#3bb77e]'>{item.title}</h3>
-                     {Array.isArray(item.submenus) && (
-                        <ul>
-                           {item.submenus.map((submenu, subindex) => (
-                              <li key={subindex}>
-                                 <Link to={submenu.link}>{submenu.name}</Link>
-                              </li>
-                           ))}
-                        </ul>
-                     )}
-                     {item.image && <img src={bannerImage} alt='' />}
-                  </div>
-               ))}
-               <div></div>
+               <ul className='dropdown_menu_list space-y-1 text-gray-700 dark:text-white dark:border-none '>
+                  {items.map((item, index) => (
+                     <li
+                        key={index}
+                        className='dropdown_menu_list_item flex items-center hover:bg-gray-200 dark:hover:bg-orange-800'
+                     >
+                        <Link
+                           to={item.link}
+                           className=' px-4 py-2 text-[16px]  rounded-md transition-all duration-300 flex justify-between items-center w-full'
+                        >
+                           <div>
+                              <h3 className='text-green-600 font-bold mb-2'>
+                                 {item.title}
+                              </h3>
+                              {item.submenu && (
+                                 <p className='text-gray-500'>{item.submenu}</p>
+                              )}
+                           </div>
+                           {/* Add an image if available */}
+                           {item.image && (
+                              <img
+                                 src={item.image}
+                                 alt={item.title}
+                                 className='w-20 h-20 object-cover'
+                              />
+                           )}
+                        </Link>
+                     </li>
+                  ))}
+               </ul>
             </div>
          </Transition>
       </div>

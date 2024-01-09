@@ -1,9 +1,7 @@
+import React from 'react';
 import { IoHelpCircle } from 'react-icons/io5';
-import '../Header.css';
 import ArrowDown from '../../../assets/ArrowDown.svg';
-import { IoIosArrowDown } from 'react-icons/io';
 import icon from '../../../assets/icon-hot.svg';
-
 import Apps from '../../../assets/apps.svg';
 import { Link } from 'react-router-dom';
 import Dropdown from '../../../Common/NavbarDropdown';
@@ -22,7 +20,7 @@ const Navbar = () => {
          <div className='flex items-center justify-between mx-4 my-4'>
             <div className='NavbarLeft flex justify-center items-center text-white'>
                <img src={Apps} alt='logo' className='mr-2 h-5' />
-               <h3 className='capitalize font-bold'>Browser All Categories</h3>
+               <h3 className='capitalize font-bold'>Browse All Categories</h3>
                <img src={ArrowDown} alt='arrow-icon' className='h-7 mr-2' />
             </div>
             <div className='NavbarRight flex justify-center items-center'>
@@ -45,13 +43,13 @@ const Navbar = () => {
                         items={vendorsDropdownData.items}
                      />
                   </li>
-                  <li className='mega'>
+                  <li className='relative'>
                      <MegaDropDown title='Mega Menu' items={megaMenuData} />
                   </li>
-                  <li className='group relative'>
+                  <li className='relative'>
                      <Dropdown title='Blogs' items={blogDropdownData.items} />
                   </li>
-                  <li className='group relative'>
+                  <li className='relative'>
                      <Dropdown title='Pages' items={pagesDropdownData.items} />
                   </li>
                   <li>
