@@ -64,7 +64,7 @@ const Dropdown = ({ title, items, icon, submenuIcon }) => {
                      >
                         <Link
                            to={item.link}
-                           className=' px-4 py-2 text-[16px]  rounded-md transition-all duration-300 flex justify-between items-center w-full'
+                           className=' px-4 py-2 text-[15px]  rounded-md transition-all duration-300 flex justify-between items-center w-full'
                         >
                            {item.name}
                         </Link>

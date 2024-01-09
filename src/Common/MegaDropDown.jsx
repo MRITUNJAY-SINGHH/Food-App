@@ -4,8 +4,9 @@ import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 import '../index.css';
+import banner from '../assets/banner-menu.png';
 
-const MegaDropDown = ({ title, items, icon, submenuIcon }) => {
+const MegaDropDown = ({ title, items, icon }) => {
    const [isSubmenuOpen, setSubmenuOpen] = useState(false);
    const dropdownRef = useRef(null);
 
@@ -19,10 +20,6 @@ const MegaDropDown = ({ title, items, icon, submenuIcon }) => {
 
    const handleMouseLeave = () => {
       setSubmenuOpen(false);
-   };
-
-   const handleIconMouseEnter = () => {
-      setSubmenuOpen(true);
    };
 
    return (
@@ -53,14 +50,17 @@ const MegaDropDown = ({ title, items, icon, submenuIcon }) => {
             <div
                onMouseEnter={handleMouseEnter}
                onMouseLeave={handleMouseLeave}
-               className='dark:bg-gray-900 text-black dropdown_menu absolute left-[-60px] top-4 mt-2 py-4 bg-white border rounded-md shadow-lg z-10 transition-all duration-500 sub-menu flex'
+               className='dark:bg-gray-900 text-black dropdown_menu absolute left-[-825px]  mx-auto top-4 mt-2 py-4 bg-white border rounded-md shadow-lg z-10 transition-all duration-500 sub-menu flex'
                ref={dropdownRef}
             >
                {items.map((item, index) => (
-                  <div key={index} className='w-1/4 px-4 h-full flex flex-col'>
+                  <div
+                     key={index}
+                     className='px-4 h-full flex flex-col w-[423px]'
+                  >
                      <Link
                         to={item.link}
-                        className='px-4 py-2 text-[16px] rounded-md transition-all duration-300'
+                        className='px-4 py-2 rounded-md transition-all duration-300 text-[#29a56c] font-bold text-[20px]'
                      >
                         {item.title}
                      </Link>
@@ -69,17 +69,20 @@ const MegaDropDown = ({ title, items, icon, submenuIcon }) => {
                            {item.submenus.map((submenu, subindex) => (
                               <li
                                  key={subindex}
-                                 className='flex items-center hover:bg-gray-200 dark:hover:bg-orange-800'
+                                 className='flex items-center hover:bg-gray-200 dark:hover:bg-orange-800 '
                               >
                                  <Link
                                     to={submenu.link}
-                                    className=' px-4 py-2 text-[16px]  rounded-md transition-all duration-300 flex justify-between items-center w-full'
+                                    className=' px-4 py-2 text-[15px]  rounded-md transition-all duration-300 flex justify-between items-center w-full'
                                  >
                                     {submenu.name}
                                  </Link>
                               </li>
                            ))}
                         </ul>
+                     )}
+                     {item.image && (
+                        <img src={banner} alt='' className='w-full' />
                      )}
                   </div>
                ))}
