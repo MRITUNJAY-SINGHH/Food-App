@@ -53,39 +53,36 @@ const MegaDropDown = ({ title, items, icon, submenuIcon }) => {
             <div
                onMouseEnter={handleMouseEnter}
                onMouseLeave={handleMouseLeave}
-               className='dark:bg-gray-900 text-black dropdown_menu absolute left-[-60px] top-4 mt-2 py-4 bg-white border rounded-md shadow-lg z-10 transition-all duration-500 sub-menu'
+               className='dark:bg-gray-900 text-black dropdown_menu absolute left-[-60px] top-4 mt-2 py-4 bg-white border rounded-md shadow-lg z-10 transition-all duration-500 sub-menu flex'
                ref={dropdownRef}
             >
-               <ul className='dropdown_menu_list space-y-1 text-gray-700 dark:text-white dark:border-none '>
-                  {items.map((item, index) => (
-                     <li
-                        key={index}
-                        className='dropdown_menu_list_item flex items-center hover:bg-gray-200 dark:hover:bg-orange-800'
+               {items.map((item, index) => (
+                  <div key={index} className='w-1/4 px-4 h-full flex flex-col'>
+                     <Link
+                        to={item.link}
+                        className='px-4 py-2 text-[16px] rounded-md transition-all duration-300'
                      >
-                        <Link
-                           to={item.link}
-                           className=' px-4 py-2 text-[16px]  rounded-md transition-all duration-300 flex justify-between items-center w-full'
-                        >
-                           <div>
-                              <h3 className='text-green-600 font-bold mb-2'>
-                                 {item.title}
-                              </h3>
-                              {item.submenu && (
-                                 <p className='text-gray-500'>{item.submenu}</p>
-                              )}
-                           </div>
-                           {/* Add an image if available */}
-                           {item.image && (
-                              <img
-                                 src={item.image}
-                                 alt={item.title}
-                                 className='w-20 h-20 object-cover'
-                              />
-                           )}
-                        </Link>
-                     </li>
-                  ))}
-               </ul>
+                        {item.title}
+                     </Link>
+                     {item.submenus && (
+                        <ul className='space-y-1 text-gray-700 dark:text-white dark:border-none '>
+                           {item.submenus.map((submenu, subindex) => (
+                              <li
+                                 key={subindex}
+                                 className='flex items-center hover:bg-gray-200 dark:hover:bg-orange-800'
+                              >
+                                 <Link
+                                    to={submenu.link}
+                                    className=' px-4 py-2 text-[16px]  rounded-md transition-all duration-300 flex justify-between items-center w-full'
+                                 >
+                                    {submenu.name}
+                                 </Link>
+                              </li>
+                           ))}
+                        </ul>
+                     )}
+                  </div>
+               ))}
             </div>
          </Transition>
       </div>
