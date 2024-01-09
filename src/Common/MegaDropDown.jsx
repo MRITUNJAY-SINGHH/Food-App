@@ -47,12 +47,12 @@ const MegaDropDown = ({ title, items, icon }) => {
             <div
                onMouseEnter={handleMouseEnter}
                onMouseLeave={handleMouseLeave}
-               className='dropdown_Menu MegaMenu flex justify-between items-center'
+               className='dropdown_Menu MegaMenu flex justify-between items-center w-[1000px]'
                ref={dropdownRef}
             >
                {items.map((item, index) => (
                   <div key={index}>
-                     <h3>{item.title}</h3>
+                     <h3 className='text-[#]'>{item.title}</h3>
                      {Array.isArray(item.submenus) && (
                         <ul>
                            {item.submenus.map((submenu, subindex) => (
