@@ -94,8 +94,3 @@
 .mega {
    position: relative;
 }
-.mega:hover {
-   cursor: pointer;
-   visibility: visible;
-   opacity: 1;
-}
