@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import Slider from 'react-slick';
-import sliderImage1 from '../assets/slider-1.png';
-import sliderImage2 from '../assets/slider-2.png';
+import sliderImage1 from '../../assets/slider-1.png';
+import sliderImage2 from '../../assets/slider-2.png';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import '../index.css';
+import '../../index.css';
 
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from 'react-icons/io';
 
@@ -31,7 +31,7 @@ function PrevArrow(props) {
       />
    );
 }
-export default function CustomSlider() {
+export default function HomeSlider() {
    const settings = {
       dots: true,
       infinite: true,

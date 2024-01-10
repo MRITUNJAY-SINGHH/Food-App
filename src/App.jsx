@@ -11,35 +11,47 @@ import ForgotPasswordPage from './Pages/ForgetPassword';
 import { DarkModeProvider } from './Common/DarkModeProvider';
 import ChangePassword from './Pages/change-password';
 import Contact from './Pages/ContactUs';
-import CustomSlider from './Common/CustomSlider';
+import Home from './Pages/Home';
 
-const FullScreenLayout = ({ children }) => {
-   return <div>{children}</div>;
-};
+const FullScreenLayout = ({ children }) => <div>{children}</div>;
 
-const CommonLayout = ({ children }) => {
-   return (
-      <div>
-         <Header />
-         {children}
-         <Footer />
-      </div>
-   );
-};
+const CommonLayout = ({ children }) => (
+   <div>
+      <Header />
+      {children}
+      <Footer />
+   </div>
+);
 
 function App() {
    return (
       <DarkModeProvider>
          <BrowserRouter>
             <Routes>
-               {/* <Route
+               <Route
+                  path='/'
+                  element={
+                     <CommonLayout>
+                        <Home />
+                     </CommonLayout>
+                  }
+               />
+               <Route
                   path='/login'
                   element={
-                     <FullScreenLayout>
+                     <CommonLayout>
                         <Login />
-                     </FullScreenLayout>
+                     </CommonLayout>
                   }
-               /> */}
+               />
+               <Route
+                  path='/contact-us'
+                  element={
+                     <CommonLayout>
+                        <Contact />
+                     </CommonLayout>
+                  }
+               />
                <Route
                   path='/sign-up'
                   element={
@@ -80,40 +92,12 @@ function App() {
                      </FullScreenLayout>
                   }
                />
-
                <Route
                   path='/*'
                   element={
                      <FullScreenLayout>
                         <ErrorPage />
                      </FullScreenLayout>
-                  }
-               />
-
-               {/* Add more routes as needed */}
-               <Route
-                  index
-                  element={
-                     <CommonLayout>
-                        <CustomSlider />
-                     </CommonLayout>
-                  }
-               />
-               <Route
-                  path='/contact-us'
-                  element={
-                     <CommonLayout>
-                        <Contact />
-                     </CommonLayout>
-                  }
-               />
-
-               <Route
-                  path='/login'
-                  element={
-                     <CommonLayout>
-                        <Login />
-                     </CommonLayout>
                   }
                />
             </Routes>

@@ -22,7 +22,10 @@
 .customBoxShadow {
    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-
+.commonHeading {
+   font-size: 35px;
+   font-weight: 600;
+}
 a {
    text-decoration: none;
    text-decoration: none;
@@ -112,6 +115,6 @@ li {
 .slider-content p {
    font-size: 32px;
    color: #7e7e7e;
-   font-weight: 500;
+   font-weight: 550;
    margin-bottom: 50px;
 }
