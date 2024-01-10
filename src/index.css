@@ -94,3 +94,24 @@ li {
 .slick-dots li.slick-active button:before {
    color: #3bb77e !important;
 }
+.slider-content {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-72%, -50%);
+   text-align: center;
+   width: 100%;
+   z-index: 1;
+}
+.slider-content h2 {
+   font-size: 72px;
+   color: #253d4e;
+   font-weight: 700;
+   margin-bottom: 20px;
+}
+.slider-content p {
+   font-size: 32px;
+   color: #7e7e7e;
+   font-weight: 500;
+   margin-bottom: 50px;
+}

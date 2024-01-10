@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Slider from 'react-slick';
 import sliderImage1 from '../assets/slider-1.png';
 import sliderImage2 from '../assets/slider-2.png';
@@ -41,35 +42,34 @@ export default function CustomSlider() {
       arrows: true,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
+      autoplay: true,
+      autoplaySpeed: 3000,
    };
 
    return (
-      <section className='home_slider relative'>
+      <section className='home_slider'>
          <div className='w-full'>
             <Slider {...settings} className='home_slider_main'>
-               <div className='relative'>
+               <div>
                   <img src={sliderImage1} alt='slider' className='w-full' />
-                  <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center'>
-                     <h2 className='text-2xl font-bold'>Don’t miss amazing</h2>
-                     <h3 className='text-2xl font-bold'>
+                  <div className='slider-content'>
+                     <h2>
+                        Don’t miss amazing
                         <br />
                         grocery deals
-                     </h3>
-                     <p>
-                        {' '}
-                        <p>Save up to 50% off on your first order</p>
-                     </p>
+                     </h2>
+                     <p>Save up to 50% off on your first order</p>
                   </div>
                </div>
-               <div className='relative'>
+               <div>
                   <img src={sliderImage2} alt='slider' className='w-full' />
-                  <div className='absolute top-[30%] left-[30%] transform  text-white text-center'>
-                     <h2 className='font-bold color-[#253d4e] text-[72px] leading-6'>
+                  <div className='slider-content'>
+                     <h2>
                         Fresh Vegetables
-                     </h2>
-                     <h3 className='font-bold color-[#253d4e] text-[72px] leading-6'>
+                        <br />
                         Big discount
-                     </h3>
+                     </h2>
+
                      <p>Save up to 50% off on your first order</p>
                   </div>
                </div>
