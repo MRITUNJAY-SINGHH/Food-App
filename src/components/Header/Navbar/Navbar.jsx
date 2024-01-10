@@ -1,4 +1,3 @@
-import React from 'react';
 import { IoHelpCircle } from 'react-icons/io5';
 import ArrowDown from '../../../assets/ArrowDown.svg';
 import icon from '../../../assets/icon-hot.svg';
