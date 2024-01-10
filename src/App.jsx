@@ -11,7 +11,7 @@ import ForgotPasswordPage from './Pages/ForgetPassword';
 import { DarkModeProvider } from './Common/DarkModeProvider';
 import ChangePassword from './Pages/change-password';
 import Contact from './Pages/ContactUs';
-import SimpleSlider from './Pages/Home';
+import CustomSlider from './Common/CustomSlider';
 
 const FullScreenLayout = ({ children }) => {
    return <div>{children}</div>;
@@ -95,7 +95,7 @@ function App() {
                   index
                   element={
                      <CommonLayout>
-                        <SimpleSlider />
+                        <CustomSlider />
                      </CommonLayout>
                   }
                />
