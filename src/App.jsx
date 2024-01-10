@@ -8,10 +8,10 @@ import MaintenancePage from './Pages/Maintainece';
 import Error500Page from './Pages/505Page';
 import SignUpPage from './Pages/SignUp';
 import ForgotPasswordPage from './Pages/ForgetPassword';
-
 import { DarkModeProvider } from './Common/DarkModeProvider';
 import ChangePassword from './Pages/change-password';
 import Contact from './Pages/ContactUs';
+import SimpleSlider from './Pages/Home';
 
 const FullScreenLayout = ({ children }) => {
    return <div>{children}</div>;
@@ -91,7 +91,14 @@ function App() {
                />
 
                {/* Add more routes as needed */}
-               <Route index element={<CommonLayout></CommonLayout>} />
+               <Route
+                  index
+                  element={
+                     <CommonLayout>
+                        <SimpleSlider />
+                     </CommonLayout>
+                  }
+               />
                <Route
                   path='/contact-us'
                   element={
@@ -100,6 +107,7 @@ function App() {
                      </CommonLayout>
                   }
                />
+
                <Route
                   path='/login'
                   element={
