@@ -23,8 +23,16 @@
    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .commonHeading {
-   font-size: 35px;
+   font-size: 32px;
    font-weight: 600;
+   color: #253d4e;
+}
+p,
+h4,
+h5,
+h6,
+span {
+   color: #253d4e;
 }
 a {
    text-decoration: none;
