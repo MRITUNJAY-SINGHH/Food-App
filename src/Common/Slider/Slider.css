@@ -1,19 +1,30 @@
 .custom-arrowSlider {
    position: absolute;
    z-index: 2;
-   top: calc(50% - 20px);
-   width: 40px;
-   height: 40px;
+   top: 50%;
+   width: 35px;
+   height: 35px;
    border-radius: 50%;
    cursor: pointer;
-   transition: background-color 0.3s, color 0.3s;
 }
 .item {
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   border-radius: 15px;
+   padding: 10px 15px;
+   line-height: 2;
+   cursor: pointer;
+   width: 170px;
+   border: 1px solid #f4f6fa;
+   transition: all 0.3s ease-in-out;
 }
+.item:hover {
+   border: 1px solid #3bb77e;
+   color: #3bb77e !important;
+}
+
 .custom-prevSlider {
    right: 80px;
    top: 10px;
