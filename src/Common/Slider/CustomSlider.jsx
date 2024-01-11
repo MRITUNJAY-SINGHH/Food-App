@@ -163,7 +163,7 @@ export default function HomeSlider() {
                autoPlay
                autoPlaySpeed={3000}
                transitionDuration={500}
-               removeArrowOnDeviceType={['tablet', 'mobile']}
+               // removeArrowOnDeviceType={['tablet', 'mobile']}
                customButtonGroup={<></>}
                customLeftArrow={<CustomLeftArrow />}
                customRightArrow={<CustomRightArrow />}
