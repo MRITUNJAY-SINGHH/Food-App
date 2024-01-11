@@ -1,27 +1,49 @@
-import Slider from 'react-slick';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import category from '../../assets/cat-13.png';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import './Slider.css';
+
+const responsive = {
+   superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 10,
+   },
+   desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 10,
+   },
+   tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+   },
+   mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+   },
+};
 
 export default function CustomSlider() {
-   const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 10,
-      slidesToScroll: 3,
-   };
-
    return (
-      <div>
-         <Slider {...settings} className='category_slider'>
-            <div>
-               <img src={category} alt='' />
-               <h3>Cake & Milk</h3>
-               <h4>Item 24</h4>
-            </div>
-         </Slider>
-      </div>
+      <Carousel responsive={responsive}>
+         <div>
+            <img src={category} alt='' />
+            <h3>Cake & Milk</h3>
+            <h4>Item 24</h4>
+         </div>
+         <div>
+            <img src={category} alt='' />
+            <h3>Cake & Milk</h3>
+            <h4>Item 24</h4>
+         </div>
+         <div>
+            <img src={category} alt='' />
+            <h3>Cake & Milk</h3>
+            <h4>Item 24</h4>
+         </div>
+         <div>
+            <img src={category} alt='' />
+            <h3>Cake & Milk</h3>
+            <h4>Item 24</h4>
+         </div>
+      </Carousel>
    );
 }

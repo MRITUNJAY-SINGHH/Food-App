@@ -1,42 +1,46 @@
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+/* eslint-disable react/prop-types */
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import sliderImage1 from '../../assets/slider-1.png';
 import sliderImage2 from '../../assets/slider-2.png';
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from 'react-icons/io';
 import '../../index.css';
+import 'react-multi-carousel/lib/styles.css';
 
 export default function HomeSlider() {
+   const responsive = {
+      desktop: {
+         breakpoint: { max: 3000, min: 1024 },
+         items: 1,
+         slidesToSlide: 1,
+      },
+      tablet: {
+         breakpoint: { max: 1024, min: 464 },
+         items: 1,
+         slidesToSlide: 1,
+      },
+      mobile: {
+         breakpoint: { max: 464, min: 0 },
+         items: 1,
+         slidesToSlide: 1,
+      },
+   };
+
    return (
       <section className='p-6'>
          <div className='w-full rounded-2xl overflow-hidden relative'>
             <Carousel
-               showThumbs={false}
-               showStatus={false}
-               infiniteLoop
+               responsive={responsive}
+               showDots={true}
+               infinite
                autoPlay
-               interval={3000}
-               transitionTime={500}
-               renderArrowPrev={(onClickHandler, label) => (
-                  <button
-                     type='button'
-                     onClick={onClickHandler}
-                     title={String(label)}
-                     className='custom-arrow custom-prev'
-                  >
-                     <IoIosArrowRoundBack size={40} />
-                  </button>
-               )}
-               renderArrowNext={(onClickHandler, hasNext, label) => (
-                  <button
-                     type='button'
-                     onClick={onClickHandler}
-                     title={String(label)}
-                     className='custom-arrow custom-next'
-                  >
-                     <IoIosArrowRoundForward size={40} />
-                  </button>
-               )}
-               dotActiveStyle={{ background: '#3BB77E' }}
+               autoPlaySpeed={3000}
+               transitionDuration={500}
+               removeArrowOnDeviceType={['tablet', 'mobile']}
+               customButtonGroup={<></>} // This is to remove default button groups
+               customLeftArrow={<CustomLeftArrow />}
+               customRightArrow={<CustomRightArrow />}
+               dotListClass='custom-dot-list'
             >
                <div>
                   <img src={sliderImage1} alt='slider' className='w-full' />
@@ -69,3 +73,15 @@ export default function HomeSlider() {
       </section>
    );
 }
+
+const CustomLeftArrow = ({ onClick }) => (
+   <button type='button' onClick={onClick} className='custom-arrow custom-prev'>
+      <IoIosArrowRoundBack size={40} />
+   </button>
+);
+
+const CustomRightArrow = ({ onClick }) => (
+   <button type='button' onClick={onClick} className='custom-arrow custom-next'>
+      <IoIosArrowRoundForward size={40} />
+   </button>
+);

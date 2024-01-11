@@ -79,10 +79,12 @@ li {
    color: white;
 }
 
-.carousel .control-dots .dot.selected {
+.react-multi-carousel-dot--active button {
    background-color: #3bb77e !important;
 }
-.carousel .control-dots .dot {
-   height: 15px !important;
-   width: 15px !important;
+.react-multi-carousel-dot button {
+   height: 12px !important;
+   width: 12px !important;
+   border: none !important;
+   background-color: #111827;
 }
