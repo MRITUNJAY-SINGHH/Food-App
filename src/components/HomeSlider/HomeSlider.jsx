@@ -1,79 +1,48 @@
-/* eslint-disable react/prop-types */
-import Slider from 'react-slick';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 import sliderImage1 from '../../assets/slider-1.png';
 import sliderImage2 from '../../assets/slider-2.png';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import '../../index.css';
-
-import { IoIosArrowRoundForward, IoIosArrowRoundBack } from 'react-icons/io';
-
-// Define custom NextArrow component
-function NextArrow(props) {
-   const { className, style, onClick } = props;
-   return (
-      <IoIosArrowRoundForward
-         className={className}
-         style={{ ...style, display: 'block' }}
-         onClick={onClick}
-      />
-   );
-}
-
-// Define custom PrevArrow component
-function PrevArrow(props) {
-   const { className, style, onClick } = props;
-   return (
-      <IoIosArrowRoundBack
-         className={className}
-         style={{ ...style, display: 'block' }}
-         onClick={onClick}
-      />
-   );
-}
 export default function HomeSlider() {
-   const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      fade: true,
-      arrows: true,
-      nextArrow: <NextArrow />,
-      prevArrow: <PrevArrow />,
-      autoplay: true,
-      autoplaySpeed: 3000,
-   };
-
    return (
-      <section className='home_slider'>
-         <div className='w-full'>
-            <Slider {...settings} className='home_slider_main'>
+      <section className='p-8'>
+         <div className='w-full rounded-3xl overflow-hidden relative'>
+            <Carousel
+               showThumbs={false}
+               showStatus={false}
+               infiniteLoop
+               autoPlay
+               interval={3000}
+               transitionTime={500}
+            >
                <div>
                   <img src={sliderImage1} alt='slider' className='w-full' />
-                  <div className='slider-content'>
-                     <h2>
+                  <div className='absolute top-1/2 left-1/2 transform -translate-x-72 -translate-y-1/2 text-center w-full z-10'>
+                     <h2 className='text-6xl text-gray-800 font-bold mb-5'>
                         Don’t miss amazing
                         <br />
                         grocery deals
                      </h2>
-                     <p>Save up to 50% off on your first order</p>
+                     <p className='text-xl text-gray-400 font-medium mb-12'>
+                        Save up to 50% off on your first order
+                     </p>
                   </div>
                </div>
                <div>
                   <img src={sliderImage2} alt='slider' className='w-full' />
-                  <div className='slider-content'>
-                     <h2>
+                  <div className='absolute top-1/2 left-1/2 transform -translate-x-72 -translate-y-1/2 text-center w-full z-10'>
+                     <h2 className='text-6xl text-gray-800 font-bold mb-5'>
                         Fresh Vegetables
                         <br />
                         Big discount
                      </h2>
 
-                     <p>Save up to 50% off on your first order</p>
+                     <p className='text-xl text-gray-400 font-medium mb-12'>
+                        Save up to 50% off on your first order
+                     </p>
                   </div>
                </div>
-            </Slider>
+            </Carousel>
          </div>
       </section>
    );

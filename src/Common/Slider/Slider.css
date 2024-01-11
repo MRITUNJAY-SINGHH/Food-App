@@ -1,13 +1,6 @@
-.category_Slider {
-   width: 100%;
-   height: auto;
-   overflow: hidden;
+.category_slider {
    padding: 15px 15px;
 }
 .category_slider_main .slick-slide {
    padding-right: 20px !important;
-}
-.category_slider_main .item {
-   height: 160px;
-   background-color: red;
 }
