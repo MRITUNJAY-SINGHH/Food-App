@@ -45,3 +45,44 @@ li {
    border-radius: 10px;
    border: 1px solid #ececec;
 }
+/* HomeSlider.css */
+.custom-arrow {
+   position: absolute;
+   z-index: 2;
+   top: calc(50% - 20px);
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   cursor: pointer;
+   transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-prev {
+   left: 15px;
+   background-color: #000;
+   color: #fff;
+}
+
+.custom-next {
+   right: 15px;
+   background-color: #000;
+   color: #fff;
+}
+
+.custom-prev:hover {
+   background-color: #3bb77e;
+   color: white;
+}
+
+.custom-next:hover {
+   background-color: #3bb77e;
+   color: white;
+}
+
+.carousel .control-dots .dot.selected {
+   background-color: #3bb77e !important;
+}
+.carousel .control-dots .dot {
+   height: 15px !important;
+   width: 15px !important;
+}
