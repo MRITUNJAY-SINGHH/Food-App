@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
+import { useRef } from 'react';
+import { IoIosArrowRoundForward, IoIosArrowRoundBack } from 'react-icons/io';
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import 'react-multi-carousel/lib/styles.css';
+
 import category from '../../assets/cat-1.png';
 import category2 from '../../assets/cat-2.png';
 import category3 from '../../assets/cat-3.png';
@@ -17,8 +18,8 @@ import category13 from '../../assets/cat-13.png';
 import category14 from '../../assets/cat-14.png';
 import category15 from '../../assets/cat-15.png';
 import './Slider.css';
-import { IoIosArrowRoundForward, IoIosArrowRoundBack } from 'react-icons/io';
-import { useRef } from 'react';
+import 'react-multi-carousel/lib/styles.css';
+import 'react-multi-carousel/lib/styles.css';
 
 export default function CustomSlider() {
    const carouselRef = useRef(null);

@@ -4,8 +4,8 @@ import 'react-multi-carousel/lib/styles.css';
 import sliderImage1 from '../../assets/slider-1.png';
 import sliderImage2 from '../../assets/slider-2.png';
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from 'react-icons/io';
-import '../../index.css';
 import 'react-multi-carousel/lib/styles.css';
+import '../../index.css';
 
 export default function HomeSlider() {
    const responsive = {
@@ -75,13 +75,21 @@ export default function HomeSlider() {
 }
 
 const CustomLeftArrow = ({ onClick }) => (
-   <button type='button' onClick={onClick} className='custom-arrow custom-prev'>
+   <button
+      type='button'
+      onClick={onClick}
+      className='custom-arrow custom-prev absolute rounded-full'
+   >
       <IoIosArrowRoundBack size={40} />
    </button>
 );
 
 const CustomRightArrow = ({ onClick }) => (
-   <button type='button' onClick={onClick} className='custom-arrow custom-next'>
+   <button
+      type='button'
+      onClick={onClick}
+      className='custom-arrow custom-next absolute rounded-full'
+   >
       <IoIosArrowRoundForward size={40} />
    </button>
 );

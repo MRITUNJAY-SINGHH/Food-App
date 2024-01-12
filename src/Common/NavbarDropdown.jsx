@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
@@ -19,7 +19,7 @@ const Dropdown = ({
    const dropdownRef = useRef(null);
 
    const handleIconClick = () => {
-      if (isSubmenuOpen) {
+      if (isSubmenuOpen && openDropdown === id) {
          setSubmenuOpen(false);
          closeDropdown();
       } else {
@@ -27,6 +27,30 @@ const Dropdown = ({
          setOpenDropdown(id);
       }
    };
+
+   useEffect(() => {
+      const handleClickOutside = (event) => {
+         if (
+            dropdownRef.current &&
+            !dropdownRef.current.contains(event.target)
+         ) {
+            setSubmenuOpen(false);
+            closeDropdown();
+         }
+      };
+
+      document.addEventListener('mousedown', handleClickOutside);
+
+      return () => {
+         document.removeEventListener('mousedown', handleClickOutside);
+      };
+   }, [dropdownRef, closeDropdown]);
+
+   useEffect(() => {
+      if (openDropdown !== id) {
+         setSubmenuOpen(false);
+      }
+   }, [openDropdown, id]);
 
    return (
       <div className='relative group text-black dark:text-white z-999'>
@@ -43,9 +67,9 @@ const Dropdown = ({
             )}
          </button>
          <Transition
-            show={isSubmenuOpen}
-            enter='transition ease-out duration-200'
-            leave='transition ease-in duration-150'
+            show={isSubmenuOpen && openDropdown === id}
+            enter='transition ease-out '
+            leave='transition ease-in'
             leaveFrom='transform opacity-100 scale-100'
             leaveTo='transform opacity-0 scale-95'
          >
