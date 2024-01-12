@@ -27,6 +27,9 @@
    font-weight: 600;
    color: #253d4e;
 }
+.dark .commonHeading {
+   color: #fff;
+}
 p,
 h4,
 h5,
@@ -37,7 +40,6 @@ span {
 a {
    text-decoration: none;
    text-decoration: none;
-   display: inline-block;
 }
 li {
    list-style-type: none;
@@ -53,8 +55,7 @@ li {
    border-radius: 10px;
    border: 1px solid #ececec;
 }
-/* HomeSlider.css */
-.custom-arrow {
+HomeSlider.css .custom-arrow {
    position: absolute;
    z-index: 2;
    top: calc(50% - 20px);

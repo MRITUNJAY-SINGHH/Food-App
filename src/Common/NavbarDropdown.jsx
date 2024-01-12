@@ -5,32 +5,33 @@ import { Link } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 import '../index.css';
 
-const Dropdown = ({ title, items, icon, submenuIcon }) => {
+const Dropdown = ({
+   id,
+   title,
+   items,
+   icon,
+   submenuIcon,
+   openDropdown,
+   setOpenDropdown,
+   closeDropdown,
+}) => {
    const [isSubmenuOpen, setSubmenuOpen] = useState(false);
    const dropdownRef = useRef(null);
 
-   const handleToggleSubmenu = () => {
-      setSubmenuOpen(!isSubmenuOpen);
-   };
-
-   const handleMouseEnter = () => {
-      setSubmenuOpen(true);
-   };
-
-   const handleMouseLeave = () => {
-      setSubmenuOpen(false);
-   };
-
-   const handleIconMouseEnter = () => {
-      setSubmenuOpen(true);
+   const handleIconClick = () => {
+      if (isSubmenuOpen) {
+         setSubmenuOpen(false);
+         closeDropdown();
+      } else {
+         setSubmenuOpen(true);
+         setOpenDropdown(id);
+      }
    };
 
    return (
-      <div className='relative group text-black dark:text-white z-50'>
+      <div className='relative group text-black dark:text-white z-999'>
          <button
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleToggleSubmenu}
+            onClick={handleIconClick}
             className='hover:text-green-600 dark:hover:text-white focus:outline-none flex items-center whitespace-nowrap'
          >
             {title}
@@ -44,36 +45,35 @@ const Dropdown = ({ title, items, icon, submenuIcon }) => {
          <Transition
             show={isSubmenuOpen}
             enter='transition ease-out duration-200'
-            enterFrom='transform opacity-0 scale-95'
-            enterTo='transform opacity-100 scale-100'
             leave='transition ease-in duration-150'
             leaveFrom='transform opacity-100 scale-100'
             leaveTo='transform opacity-0 scale-95'
          >
             <div
-               onMouseEnter={handleMouseEnter}
-               onMouseLeave={handleMouseLeave}
-               className='dark:bg-gray-900 text-black dropdown_menu absolute left-[-60px] top-4 mt-2 py-4 bg-white border rounded-md shadow-lg z-10 transition-all duration-500 sub-menu'
+               className='dark:bg-gray-900 text-black absolute left-[-60px] top-10 mt-2 py-4 bg-white border rounded-md shadow-lg z-10 transition-all duration-500 sub-menu'
                ref={dropdownRef}
             >
-               <ul className='dropdown_menu_list space-y-1 text-gray-700 dark:text-white dark:border-none '>
+               <ul className='space-y-1 text-gray-700 dark:text-white dark:border-none'>
                   {items.map((item, index) => (
                      <li
                         key={index}
-                        className='dropdown_menu_list_item flex items-center hover:bg-gray-200 dark:hover:bg-orange-800'
+                        className='flex items-center hover:bg-gray-200 dark:hover:bg-orange-800'
                      >
                         <Link
                            to={item.link}
-                           className=' px-4 py-2 text-[15px]  rounded-md transition-all duration-300 flex justify-between items-center w-full'
+                           className='px-4 py-2 text-[15px] rounded-md transition-all duration-300 flex justify-between items-center w-full'
                         >
                            {item.name}
                         </Link>
                         {item.submenu && (
                            <Dropdown
-                              onMouseEnter={handleIconMouseEnter}
+                              id={item.id}
                               title=''
                               items={item.submenu}
                               submenuIcon={submenuIcon}
+                              openDropdown={openDropdown}
+                              setOpenDropdown={setOpenDropdown}
+                              closeDropdown={closeDropdown}
                            />
                         )}
                      </li>

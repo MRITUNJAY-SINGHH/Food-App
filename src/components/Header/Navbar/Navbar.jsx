@@ -11,7 +11,7 @@ import {
    shopDropdownData,
    megaMenuData,
 } from '../../../data/DropdownData';
-import MegaDropDown from '../../../Common/MegaDropdown';
+import MegaDropDown from '../../../Common/MegaDropDown';
 
 const Navbar = () => {
    return (
@@ -60,9 +60,9 @@ const Navbar = () => {
                </ul>
             </div>
             <div className='NavbarCenter flex justify-end items-end'>
-               <div className='help-section flex items-center text-lg cursor-pointer mr-8'>
+               <div className='help-section flex items-center text-lg cursor-pointer mr-8 dark:text-white'>
                   <IoHelpCircle className='mr-2 text-2xl' />
-                  <span>Help</span>
+                  <span className='dark:text-white'>Help</span>
                </div>
             </div>
          </div>

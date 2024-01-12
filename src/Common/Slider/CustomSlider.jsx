@@ -18,9 +18,18 @@ import category14 from '../../assets/cat-14.png';
 import category15 from '../../assets/cat-15.png';
 import './Slider.css';
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from 'react-icons/io';
-import './Slider.css';
+import { useRef } from 'react';
 
-export default function HomeSlider() {
+export default function CustomSlider() {
+   const carouselRef = useRef(null);
+
+   const nextSlide = () => {
+      carouselRef.current.next();
+   };
+
+   const previousSlide = () => {
+      carouselRef.current.previous();
+   };
    const responsive = {
       desktop: {
          breakpoint: { max: 3000, min: 1024 },
@@ -148,7 +157,7 @@ export default function HomeSlider() {
 
    return (
       <div className='p-6 mt-6'>
-         <div className='w-full rounded-2xl overflow-hidden'>
+         <div className='w-full rounded-2xl overflow-hidden relative'>
             <div className='flex items-center paragraph'>
                <div className='px-2'>
                   <h1 className='commonHeading'>Featured Categories</h1>
@@ -169,7 +178,9 @@ export default function HomeSlider() {
                autoPlaySpeed={3000}
                transitionDuration={500}
                beforeChange={customBeforeChange}
-               className='pt-[5rem] px-4 pb-[2rem] relative'
+               className='pt-[3rem] px-4 pb-[2rem] relative'
+               arrows={false}
+               ref={carouselRef}
             >
                {data.map((item, id) => (
                   <div
@@ -188,12 +199,20 @@ export default function HomeSlider() {
                   </div>
                ))}
             </Carousel>
-            <button className='bottom-10 left-1/2 transform -translate-x-1/2 bg-blue-500 px-4 py-2 text-white rounded-md'>
-               <IoIosArrowRoundForward />
-            </button>
-            <button className='bottom-10 left-1/2 transform -translate-x-1/2 bg-blue-500 px-4 py-2 text-white rounded-md'>
-               <IoIosArrowRoundBack />
-            </button>
+            <div className='custom-arrowSlider absolute bg-red top-0 right-0  mx-5'>
+               <button
+                  className='custom-nextSlider rounded-full mr-8'
+                  onClick={previousSlide}
+               >
+                  <IoIosArrowRoundBack size={40} />
+               </button>
+               <button
+                  className='custom-prevSlider rounded-full '
+                  onClick={nextSlide}
+               >
+                  <IoIosArrowRoundForward size={40} />
+               </button>
+            </div>
          </div>
       </div>
    );

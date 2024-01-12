@@ -31,7 +31,7 @@ const DarkNightMode = () => {
             className='sr-only'
          />
          <span className='icon flex items-center transition-all duration-300 ease-in-out text-2xl'>
-            {isChecked ? <BsMoon /> : <BsSun />}
+            {isChecked ? <BsMoon className='dark:text-white' /> : <BsSun />}
          </span>
       </label>
    );

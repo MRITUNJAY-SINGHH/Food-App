@@ -1,34 +1,33 @@
 /* eslint-disable react/prop-types */
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 import '../index.css';
 import banner from '../assets/banner-menu.png';
 
-const MegaDropDown = ({ title, items, icon }) => {
+const MegaDropdown = ({ title, items, icon }) => {
    const [isSubmenuOpen, setSubmenuOpen] = useState(false);
-   const dropdownRef = useRef(null);
 
    const handleToggleSubmenu = () => {
       setSubmenuOpen(!isSubmenuOpen);
    };
 
-   const handleMouseEnter = () => {
-      setSubmenuOpen(true);
+   const handleClickOutside = (event) => {
+      // Close the submenu when clicking outside of the dropdown
+      if (event.target.closest('.group') === null) {
+         setSubmenuOpen(false);
+      }
    };
 
-   const handleMouseLeave = () => {
-      setSubmenuOpen(false);
-   };
+   // Attach a click event listener to the document to close the submenu when clicking outside
+   document.addEventListener('click', handleClickOutside);
 
    return (
       <div className='relative group text-black dark:text-white z-50'>
          <button
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleToggleSubmenu}
             className='hover:text-green-600 dark:hover:text-white focus:outline-none flex items-center whitespace-nowrap'
+            onClick={handleToggleSubmenu}
          >
             {title}
             {icon && <span className='ml-1 cursor-pointer'>{icon}</span>}
@@ -40,19 +39,12 @@ const MegaDropDown = ({ title, items, icon }) => {
          </button>
          <Transition
             show={isSubmenuOpen}
-            enter='transition ease-out duration-200'
-            enterFrom='transform opacity-0 scale-95'
-            enterTo='transform opacity-100 scale-100'
+            enter='transition ease-out duration-50'
             leave='transition ease-in duration-150'
             leaveFrom='transform opacity-100 scale-100'
             leaveTo='transform opacity-0 scale-95'
          >
-            <div
-               onMouseEnter={handleMouseEnter}
-               onMouseLeave={handleMouseLeave}
-               className='dark:bg-gray-900 text-black dropdown_menu absolute left-[-825px]  mx-auto top-4 mt-2 py-4 bg-white border rounded-md shadow-lg z-10 transition-all duration-500 sub-menu flex'
-               ref={dropdownRef}
-            >
+            <div className='dark:bg-gray-900 text-black dropdown_menu absolute left-[-825px] mx-auto top-[40px] mt-2 py-4 bg-white border rounded-md shadow-lg z-10 transition-all duration-500 sub-menu flex'>
                {items.map((item, index) => (
                   <div
                      key={index}
@@ -92,4 +84,4 @@ const MegaDropDown = ({ title, items, icon }) => {
    );
 };
 
-export default MegaDropDown;
+export default MegaDropdown;
