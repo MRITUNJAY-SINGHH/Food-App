@@ -13,12 +13,14 @@
    align-items: center;
    flex-direction: column;
    border-radius: 15px;
-   padding: 10px 15px;
    line-height: 2;
    cursor: pointer;
-   width: 170px;
+   width: 150px !important;
    border: 1px solid #f4f6fa;
    transition: all 0.3s ease-in-out;
+}
+.item img {
+   max-width: 90px;
 }
 .item:hover {
    border: 1px solid #3bb77e;
@@ -37,6 +39,19 @@
    top: 10px;
    background-color: #f2f3f4;
    color: #7e7e7e;
+}
+.paragraph p {
+   padding: 0 15px;
+   background: none;
+   font-size: 18px;
+   color: #253d4e;
+   cursor: pointer;
+   transition: all 0.3s ease-in-out;
+}
+
+.paragraph p:hover {
+   color: #3bb77e !important;
+   margin-bottom: 0.5rem;
 }
 
 .custom-prevSlider:hover {
@@ -57,4 +72,8 @@
    width: 12px !important;
    border: none !important;
    background-color: #111827;
+}
+
+.react-multi-carousel-track {
+   transition: transform 0.5s ease;
 }
