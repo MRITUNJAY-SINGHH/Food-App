@@ -22,6 +22,7 @@
 .customBoxShadow {
    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
+
 .commonHeading {
    font-size: 32px;
    font-weight: 600;
@@ -50,6 +51,9 @@
 }
 .animate-icon {
    transition: transform 0.5s ease-in-out;
+}
+.customHover:hover .animate-icon {
+   transform: translateY(-6px);
 }
 
 .primary-btn:hover .animate-icon {

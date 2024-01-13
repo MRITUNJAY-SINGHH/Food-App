@@ -14,20 +14,20 @@ const ScrollToTopButton = () => {
    };
 
    const scrollToTop = () => {
-      // Set initial position with a transition
-      document.documentElement.style.transition =
-         'scroll-margin-top 0.3s ease-in-out';
-      document.documentElement.style.scrollMarginTop = '15px'; // Adjust this value as needed
+      let targetScroll = window.scrollY - 100;
+      if (targetScroll < 0) targetScroll = 0;
 
-      // Remove transition after a short delay
-      setTimeout(() => {
-         document.documentElement.style.transition = '';
-      }, 300);
+      const slowScroll = () => {
+         const currentScroll = window.scrollY;
+         if (currentScroll > targetScroll) {
+            window.scrollTo(0, currentScroll - 1);
+            requestAnimationFrame(slowScroll);
+         } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+         }
+      };
 
-      // Scroll to the top smoothly
-      setTimeout(() => {
-         window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 400);
+      slowScroll();
    };
 
    useEffect(() => {
@@ -48,12 +48,14 @@ const ScrollToTopButton = () => {
          leaveFrom='opacity-100'
          leaveTo='opacity-0'
       >
-         <button
-            className='fixed bottom-4 right-4 bg-[#253d4e] text-white  px-3 py-3 rounded-sm cursor-pointer'
-            onClick={scrollToTop}
-         >
-            <FaArrowUp className='text-lg' />
-         </button>
+         <div className='fixed bottom-4 right-4 transition transform customHover duration-300'>
+            <button
+               className='dark:bg-white animate-icon bg-white dark:text-black px-3 py-3 rounded-full text-black cursor-pointer border border-black dark:border-white'
+               onClick={scrollToTop}
+            >
+               <FaArrowUp className='text-lg' />
+            </button>
+         </div>
       </Transition>
    );
 };
