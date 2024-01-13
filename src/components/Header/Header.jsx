@@ -26,7 +26,7 @@ const Header = () => {
                   id='search-input'
                   type='text'
                   placeholder='Search for food items, e.g., apples, bread, milk...'
-                  className='outline-none flex-1 dark:bg-gray-900 dark:text-white text-red placeholder-black dark:placeholder-black'
+                  className='outline-none flex-1 dark:bg-gray-900 dark:text-white placeholder-black dark:placeholder-white'
                />
 
                <div className='search-icon cursor-pointer dark:text-white'>

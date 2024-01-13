@@ -5,27 +5,12 @@ import { Link } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 import '../index.css';
 
-const Dropdown = ({
-   id,
-   title,
-   items,
-   icon,
-   submenuIcon,
-   openDropdown,
-   setOpenDropdown,
-   closeDropdown,
-}) => {
+const Dropdown = ({ id, title, items, icon, openDropdown }) => {
    const [isSubmenuOpen, setSubmenuOpen] = useState(false);
    const dropdownRef = useRef(null);
 
    const handleIconClick = () => {
-      if (isSubmenuOpen && openDropdown === id) {
-         setSubmenuOpen(false);
-         closeDropdown();
-      } else {
-         setSubmenuOpen(true);
-         setOpenDropdown(id);
-      }
+      setSubmenuOpen((prevOpen) => !prevOpen);
    };
 
    useEffect(() => {
@@ -35,7 +20,6 @@ const Dropdown = ({
             !dropdownRef.current.contains(event.target)
          ) {
             setSubmenuOpen(false);
-            closeDropdown();
          }
       };
 
@@ -44,7 +28,7 @@ const Dropdown = ({
       return () => {
          document.removeEventListener('mousedown', handleClickOutside);
       };
-   }, [dropdownRef, closeDropdown]);
+   }, [dropdownRef]);
 
    useEffect(() => {
       if (openDropdown !== id) {
@@ -54,9 +38,9 @@ const Dropdown = ({
 
    return (
       <div className='relative group text-black dark:text-white z-999'>
-         <button
+         <div
             onClick={handleIconClick}
-            className='hover:text-green-600 dark:hover:text-white focus:outline-none flex items-center whitespace-nowrap'
+            className='hover:text-green-600 dark:hover:text-white focus:outline-none flex items-center whitespace-nowrap cursor-pointer'
          >
             {title}
             {icon && <span className='ml-1 cursor-pointer'>{icon}</span>}
@@ -65,7 +49,7 @@ const Dropdown = ({
             ) : (
                <IoIosArrowDown className='inline-block ml-1' />
             )}
-         </button>
+         </div>
          <Transition
             show={isSubmenuOpen && openDropdown === id}
             enter='transition ease-out '
@@ -94,10 +78,7 @@ const Dropdown = ({
                               id={item.id}
                               title=''
                               items={item.submenu}
-                              submenuIcon={submenuIcon}
                               openDropdown={openDropdown}
-                              setOpenDropdown={setOpenDropdown}
-                              closeDropdown={closeDropdown}
                            />
                         )}
                      </li>

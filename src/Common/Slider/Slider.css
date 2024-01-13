@@ -30,6 +30,22 @@ h3 {
    background-color: #f2f3f4;
    color: #7e7e7e;
 }
+.dark .custom-prevSlider {
+   background-color: white;
+   color: #000;
+}
+.dark .custom-prevSlider:hover {
+   background-color: white;
+   color: #000;
+}
+.dark .custom-nextSlider {
+   background-color: white;
+   color: #000;
+}
+.dark .custom-nextSlider:hover {
+   background-color: white;
+   color: #000;
+}
 
 .custom-nextSlider {
    background-color: #f2f3f4;
