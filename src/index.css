@@ -30,6 +30,31 @@
 .dark .commonHeading {
    color: #fff;
 }
+.primary-btn {
+   padding: 7px 15px;
+   font-size: 16px;
+   text-transform: none;
+   display: inline-flex;
+   flex-wrap: wrap;
+   line-height: 1.3;
+   border-radius: 4px;
+   color: #fff;
+   border: 1px solid transparent;
+   background-color: #3bb77e;
+   transition: all 0.5s linear;
+   letter-spacing: 0.5px;
+}
+.primary-btn:hover {
+   background-color: #f5e12e;
+   color: #fff;
+}
+.animate-icon {
+   transition: transform 0.5s ease-in-out;
+}
+
+.primary-btn:hover .animate-icon {
+   transform: translateX(8px);
+}
 p,
 h4,
 h5,
