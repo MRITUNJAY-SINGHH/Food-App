@@ -4,14 +4,23 @@
    align-items: center;
    flex-direction: column;
    border-radius: 15px;
-   line-height: 2;
    cursor: pointer;
+   line-height: 2;
    width: 150px !important;
-   border: 1px solid #f4f6fa;
    transition: all 0.3s ease-in-out;
 }
+.item img,
+h3 {
+   transition: all 0.3s ease-in-out;
+}
+.item:hover img {
+   transform: scale(1.1);
+}
+.item:hover h3 {
+   color: #3bb77e !important;
+}
 .item img {
-   max-width: 90px;
+   max-width: 80px;
 }
 .item:hover {
    border: 1px solid #3bb77e;
@@ -41,7 +50,7 @@
 
 .paragraph p:hover {
    color: #3bb77e !important;
-   margin-bottom: 0.5rem;
+   margin-bottom: 0.3rem;
 }
 
 .custom-prevSlider:hover {
@@ -52,6 +61,14 @@
 .custom-nextSlider:hover {
    background-color: #000;
    color: #fff;
+}
+.dark .custom-prevSlider:hover {
+   background-color: #fff;
+   color: #000;
+}
+.dark .custom-nextSlider:hover {
+   background-color: #fff;
+   color: #000;
 }
 
 .react-multi-carousel-dot--active button {

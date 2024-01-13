@@ -50,7 +50,6 @@ export default function CustomSlider() {
    };
    const customBeforeChange = (nextSlide, { currentSlide }) => {
       if (nextSlide !== currentSlide) {
-         // Disable drag by preventing the change of slides
          return false;
       }
       return true;
@@ -165,9 +164,9 @@ export default function CustomSlider() {
                </div>
                <div className='flex items-center justify-center ml-10  cursor-pointer paragraph'>
                   <p>Cake & Milk</p>
-                  <p>Cake & Milk</p>
-                  <p>Cake & Milk</p>
-                  <p>Cake & Milk</p>
+                  <p>Coffee & Milk</p>
+                  <p>Vegetables</p>
+                  <p>Snakes</p>
                </div>
             </div>
 
