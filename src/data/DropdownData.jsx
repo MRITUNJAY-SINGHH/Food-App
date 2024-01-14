@@ -83,9 +83,9 @@ export const megaMenuData = [
       ],
    },
    {
-      title: 'Hot Deals',
       image: '../assets/banner-menu.png',
       content: {
+         deal: 'Hot Deals',
          title: "Don't miss Trending",
          price: 'Save to 50%',
          discount: '25% off',
