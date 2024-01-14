@@ -1,13 +1,36 @@
 import Rating from '@mui/material/Rating';
 import product from '../../assets/product-1-2.jpg';
+import { AiOutlineHeart } from 'react-icons/ai';
+import { AiOutlineSwap } from 'react-icons/ai';
+import { AiOutlineEye } from 'react-icons/ai';
 
 import { FaTruckArrowRight } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
 const Card = () => {
    return (
-      <div className='p-6 w-full h-auto  cardDesign'>
-         <div className='imgWrapper'>
+      <div className='p-6 w-full h-auto  cardDesign relative'>
+         <div className='imgWrapper relative'>
             <img src={product} alt='product' className='w-full' />
+            <div className='absolute top-0 left-0 w-full h-full  flex justify-center items-center'>
+               <ul className='bg-white w-[200px] h-auto py-3 px-2  border border-solid  border-[#BCE3C9]  flex justify-between items-center product_list'>
+                  <Link>
+                     <li className='product_border'>
+                        <AiOutlineHeart size={25} />
+                     </li>
+                  </Link>
+                  <Link>
+                     <li className='product_border'>
+                        <AiOutlineSwap size={25} />
+                     </li>
+                  </Link>
+                  <Link>
+                     <li className='product_border'>
+                        <AiOutlineEye size={25} />
+                     </li>
+                  </Link>
+               </ul>
+            </div>
          </div>
          <div className='productInfo'>
             <span className='opacity-50 text-black text-sm'>Snakes</span>

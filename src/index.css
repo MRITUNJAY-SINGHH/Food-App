@@ -144,3 +144,13 @@ li {
 .rating {
    font-size: 18px !important;
 }
+.product_list {
+   border-radius: 8px;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   visibility: hidden;
+}
+.cardDesign {
+}
+.cardDesign:hover .product_list {
+   visibility: visible;
+}
