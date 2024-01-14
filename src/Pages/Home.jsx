@@ -3,8 +3,8 @@ import HomeSlider from '../components/HomeSlider/HomeSlider';
 import infoOne from '../assets/info-1.png';
 import infoTwo from '../assets/info-2.png';
 import infoThree from '../assets/info-3.png';
-import ScrollToTopButton from '../Common/ScrollTop';
 import { FaTruckArrowRight } from 'react-icons/fa6';
+import Card from '../components/Card/Card';
 
 const BannerData = [
    {
@@ -35,6 +35,7 @@ const Home = () => {
       <div>
          <HomeSlider />
          <CustomSlider />
+         {/* Banner section start */}
          <div className='p-6'>
             <div className='flex justify-between items-center'>
                {BannerData.map((item, index) => (
@@ -59,7 +60,32 @@ const Home = () => {
                ))}
             </div>
          </div>
-         <ScrollToTopButton />
+         {/* Banner section end */}
+         {/* Popular Products section start */}
+         <div className='p-6'>
+            <div className='flex  justify-between items-center px-6'>
+               <div>
+                  <h1 className='commonHeading'>Popular Products</h1>
+               </div>
+               <div>
+                  <div className='flex items-center justify-center ml-10  cursor-pointer paragraph'>
+                     <p>All</p>
+                     <p>Milks & Dairies</p>
+                     <p>Cake & Milk</p>
+                     <p>Fruits</p>
+                     <p>Vegetables</p>
+                     <p>Snakes</p>
+                  </div>
+               </div>
+            </div>
+            <div className='product flex flex-wrap pt-12'>
+               <div className='w-[20%]  px-4 pb-12'>
+                  <Card />
+               </div>
+            </div>
+         </div>
+
+         {/* Popular Products section end */}
       </div>
    );
 };

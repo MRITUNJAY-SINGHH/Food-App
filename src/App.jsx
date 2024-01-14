@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 import Header from './components/Header/Header';
@@ -13,6 +14,8 @@ import ChangePassword from './Pages/change-password';
 import Contact from './Pages/ContactUs';
 import Home from './Pages/Home';
 
+import ScrollToTopButton from '../src/Common/ScrollTop';
+
 const FullScreenLayout = ({ children }) => <div>{children}</div>;
 
 const CommonLayout = ({ children }) => (
@@ -24,6 +27,19 @@ const CommonLayout = ({ children }) => (
 );
 
 function App() {
+   useEffect(() => {
+      const handleBeforeUnload = (event) => {
+         event.preventDefault();
+
+         event.returnValue = '';
+      };
+
+      window.addEventListener('beforeunload', handleBeforeUnload);
+
+      return () => {
+         window.removeEventListener('beforeunload', handleBeforeUnload);
+      };
+   }, []);
    return (
       <DarkModeProvider>
          <BrowserRouter>
@@ -101,6 +117,7 @@ function App() {
                   }
                />
             </Routes>
+            <ScrollToTopButton />
          </BrowserRouter>
       </DarkModeProvider>
    );

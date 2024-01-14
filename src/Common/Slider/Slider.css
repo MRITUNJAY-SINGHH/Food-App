@@ -56,6 +56,7 @@ h3 {
    background: none;
    font-size: 18px;
    color: #253d4e;
+   font-weight: 700;
    cursor: pointer;
    transition: all 0.3s ease-in-out;
 }
