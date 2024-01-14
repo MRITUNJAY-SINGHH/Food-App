@@ -14,7 +14,7 @@ const ScrollToTopButton = () => {
    };
 
    const scrollToTop = () => {
-      let targetScroll = window.scrollY - 100;
+      let targetScroll = window.scrollY - 80;
       if (targetScroll < 0) targetScroll = 0;
 
       const slowScroll = () => {

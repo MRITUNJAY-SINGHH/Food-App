@@ -144,13 +144,132 @@ li {
 .rating {
    font-size: 18px !important;
 }
+
 .product_list {
    border-radius: 8px;
    border: 1px solid rgba(0, 0, 0, 0.2);
    visibility: hidden;
+   opacity: 0;
+   transition: all 0.5s ease-in-out;
 }
 .cardDesign {
+   transition: all 0.5s ease-in-out;
+   border-radius: 16px;
+}
+
+.cardDesign img {
+   transition: all 0.5s ease-in-out;
+}
+
+.cardDesign:hover img {
+   transform: scale(1.1);
+}
+
+.cardDesign .badge {
+   display: inline-block;
+   font-size: 12px;
+   line-height: 1;
+   border-radius: 15px 0 20px 0;
+   color: #fff;
+   padding: 9px 20px 10px 20px;
+   background-color: #f74b81;
 }
 .cardDesign:hover .product_list {
    visibility: visible;
+   opacity: 1;
+   transform: scale(0.9);
+}
+
+/* START TOOLTIP STYLES */
+[tooltip] {
+   position: relative; /* opinion 1 */
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+   text-transform: capitalize; /* opinion 2 */
+   font-size: 1rem; /* opinion 3 */
+   line-height: 1;
+
+   user-select: none;
+   pointer-events: none;
+   position: absolute;
+   display: none;
+   opacity: 0;
+}
+[tooltip]::before {
+   content: '';
+   border: 5px solid transparent; /* opinion 4 */
+   z-index: 1001; /* absurdity 1 */
+}
+[tooltip]::after {
+   content: attr(tooltip); /* magic! */
+   text-align: center;
+   min-width: 3em;
+   max-width: 21em;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   padding: 1ch 1.5ch;
+   border-radius: 0.3ch;
+   box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+   background: #3bb77e;
+   color: #fff;
+   z-index: 1000;
+}
+
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+   display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+   display: none !important;
+}
+
+/* FLOW: UP */
+[tooltip]:not([flow])::before,
+[tooltip][flow^='up']::before {
+   bottom: 115%;
+
+   border-top-color: #3bb77e;
+}
+[tooltip]:not([flow])::after,
+[tooltip][flow^='up']::after {
+   bottom: calc(125% + 5px);
+}
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^='up']::before,
+[tooltip][flow^='up']::after {
+   left: 50%;
+   transform: translate(-50%, -0.5em);
+}
+
+@keyframes tooltips-vert {
+   to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+   }
+}
+
+@keyframes tooltips-horz {
+   to {
+      opacity: 1;
+      transform: translate(0, -50%);
+   }
+}
+
+/* FX All The Things */
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^='down']:hover::after {
+   animation: tooltips-vert 300ms ease-out forwards;
+}
+
+[tooltip][flow^='right']:hover::after {
+   animation: tooltips-horz 300ms ease-out forwards;
 }
