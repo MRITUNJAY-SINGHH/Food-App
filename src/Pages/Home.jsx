@@ -27,7 +27,7 @@ const ProductData = [
       price: '$ 5.99',
       discount: '$ 6.99',
       rating: '4.5',
-      offer: 'Hot',
+      offer: 'Sale',
       image: product,
       image2: product2,
    },
