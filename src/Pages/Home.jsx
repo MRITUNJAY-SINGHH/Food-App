@@ -6,7 +6,11 @@ import infoThree from '../assets/info-3.png';
 import { FaTruckArrowRight } from 'react-icons/fa6';
 import Card from '../components/Card/Card';
 import product from '../assets/product-1-1.jpg';
-import product2 from '../assets/product-1-2.jpg';
+import product1 from '../assets/product-1-2.jpg';
+import productTwo from '../assets/product-2-1.jpg';
+import product2 from '../assets/product-2-2.jpg';
+import productThree from '../assets/product-3-1.jpg';
+import product3 from '../assets/product-3-2.jpg';
 
 const ProductData = [
    {
@@ -18,29 +22,29 @@ const ProductData = [
       rating: '4.5',
       offer: 'Hot',
       image: product,
-      image2: product2,
+      image2: product1,
    },
    {
       id: 2,
-      name: 'Snakes',
-      title: 'Seeds of Change Organic Quinoa, Brown, & Red Rice',
-      price: '$ 5.99',
-      discount: '$ 6.99',
+      name: 'Hodo Foods',
+      title: 'All Natural Italian-Style Chicken Meatballs',
+      price: '$25.99',
+      discount: '$16.99',
       rating: '4.5',
       offer: 'Sale',
-      image: product,
+      image: productTwo,
       image2: product2,
    },
    {
       id: 3,
       name: 'Snakes',
-      title: 'Seeds of Change Organic Quinoa, Brown, & Red Rice',
-      price: '$ 5.99',
-      discount: '$ 6.99',
-      rating: '4.5',
-      offer: 'Hot',
-      image: product,
-      image2: product2,
+      title: 'Angie’s Boomchickapop Sweet & Salty Kettle Corn',
+      price: '$55.99',
+      discount: '$26.99',
+      rating: '4.0',
+      offer: 'Special',
+      image: productThree,
+      image2: product3,
    },
 ];
 

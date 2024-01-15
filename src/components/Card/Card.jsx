@@ -7,17 +7,22 @@ import { Link } from 'react-router-dom';
 
 const Card = ({ productData }) => {
    const [currentImage, setCurrentImage] = useState(productData.image);
+   const [hovered, setHovered] = useState(false);
 
    const handleMouseMove = (event) => {
-      const mouseX = event.nativeEvent.offsetX;
-      const cardWidth = event.target.clientWidth;
-      const ratio = mouseX / cardWidth;
-      const interpolatedImage =
-         ratio < 0.5 ? productData.image : productData.image2;
-      setCurrentImage(interpolatedImage);
+      if (!hovered) {
+         setHovered(true);
+         const mouseX = event.nativeEvent.offsetX;
+         const cardWidth = event.target.clientWidth;
+         const ratio = mouseX / cardWidth;
+         const interpolatedImage =
+            ratio < 0.5 ? productData.image : productData.image2;
+         setCurrentImage(interpolatedImage);
+      }
    };
 
    const handleMouseLeave = () => {
+      setHovered(false);
       setCurrentImage(productData.image);
    };
 
