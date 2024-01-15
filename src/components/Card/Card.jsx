@@ -28,7 +28,7 @@ const Card = ({ productData }) => {
 
    return (
       <div
-         className='p-6 w-full h-auto cardDesign relative'
+         className='p-6 w-full cardDesign relative'
          onMouseMove={handleMouseMove}
          onMouseLeave={handleMouseLeave}
       >
@@ -62,7 +62,7 @@ const Card = ({ productData }) => {
             <span className='opacity-50 text-black text-sm dark:text-white dark:opacity-100'>
                {productData.name}
             </span>
-            <p className='text-[18px] font-semibold my-2 dark:text-white dark:opacity-100'>
+            <p className='text-[18px] w-[260px] font-semibold my-2 dark:text-white dark:opacity-100'>
                {productData.title}
             </p>
             <div className='flex items-center text-sm my-2 dark:text-white dark:opacity-100'>
@@ -81,10 +81,10 @@ const Card = ({ productData }) => {
             </div>
             <div className='flex justify-between items-center dark:text-white dark:opacity-100'>
                <div className='flex  justify-center items-center'>
-                  <p className='text-[#3BB77E] font-bold text-[18px] dark:text-white'>
+                  <p className='text-[#3BB77E] font-bold text-[16px] dark:text-white'>
                      {productData.price}
                   </p>
-                  <p className='text-[#253D4E] ml-2 line-through dark:text-white'>
+                  <p className='text-[#253D4E] ml-2 line-through text-[12px] dark:text-white'>
                      {productData.discount}
                   </p>
                </div>

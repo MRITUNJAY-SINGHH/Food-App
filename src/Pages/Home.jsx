@@ -11,14 +11,16 @@ import productTwo from '../assets/product-2-1.jpg';
 import product2 from '../assets/product-2-2.jpg';
 import productThree from '../assets/product-3-1.jpg';
 import product3 from '../assets/product-3-2.jpg';
+import productFour from '../assets/product-4-1.jpg';
+import product4 from '../assets/product-4-2.jpg';
 
 const ProductData = [
    {
       id: 1,
       name: 'Snakes',
       title: 'Seeds of Change Organic Quinoa, Brown, & Red Rice',
-      price: '$ 5.99',
-      discount: '$ 6.99',
+      price: '$5.99',
+      discount: '$6.99',
       rating: '4.5',
       offer: 'Hot',
       image: product,
@@ -45,6 +47,17 @@ const ProductData = [
       offer: 'Special',
       image: productThree,
       image2: product3,
+   },
+   {
+      id: 3,
+      name: 'Vegetables',
+      title: 'Foster Farms Takeout Crispy Classic Buffalo Wings',
+      price: '$50.99',
+      discount: '$30.99',
+      rating: '3.8',
+      offer: '10% Off',
+      image: productFour,
+      image2: product4,
    },
 ];
 
