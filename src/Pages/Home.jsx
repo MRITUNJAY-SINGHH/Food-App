@@ -5,6 +5,44 @@ import infoTwo from '../assets/info-2.png';
 import infoThree from '../assets/info-3.png';
 import { FaTruckArrowRight } from 'react-icons/fa6';
 import Card from '../components/Card/Card';
+import product from '../assets/product-1-1.jpg';
+import product2 from '../assets/product-1-2.jpg';
+
+const ProductData = [
+   {
+      id: 1,
+      name: 'Snakes',
+      title: 'Seeds of Change Organic Quinoa, Brown, & Red Rice',
+      price: '$ 5.99',
+      discount: '$ 6.99',
+      rating: '4.5',
+      offer: 'Hot',
+      image: product,
+      image2: product2,
+   },
+   {
+      id: 2,
+      name: 'Snakes',
+      title: 'Seeds of Change Organic Quinoa, Brown, & Red Rice',
+      price: '$ 5.99',
+      discount: '$ 6.99',
+      rating: '4.5',
+      offer: 'Hot',
+      image: product,
+      image2: product2,
+   },
+   {
+      id: 3,
+      name: 'Snakes',
+      title: 'Seeds of Change Organic Quinoa, Brown, & Red Rice',
+      price: '$ 5.99',
+      discount: '$ 6.99',
+      rating: '4.5',
+      offer: 'Hot',
+      image: product,
+      image2: product2,
+   },
+];
 
 const BannerData = [
    {
@@ -79,8 +117,12 @@ const Home = () => {
                </div>
             </div>
             <div className='product flex flex-wrap pt-12'>
-               <div className='w-[20%]  px-4 pb-12'>
-                  <Card />
+               <div className='flex flex-wrap'>
+                  {ProductData.map((product, id) => (
+                     <div className='w-[20%] px-4 pb-12 ' key={id}>
+                        <Card key={product.id} productData={product} />
+                     </div>
+                  ))}
                </div>
             </div>
          </div>
