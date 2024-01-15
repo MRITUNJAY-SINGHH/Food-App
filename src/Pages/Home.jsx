@@ -13,6 +13,8 @@ import productThree from '../assets/product-3-1.jpg';
 import product3 from '../assets/product-3-2.jpg';
 import productFour from '../assets/product-4-1.jpg';
 import product4 from '../assets/product-4-2.jpg';
+import productFive from '../assets/product-5-1.jpg';
+import product5 from '../assets/product-5-2.jpg';
 
 const ProductData = [
    {
@@ -49,7 +51,7 @@ const ProductData = [
       image2: product3,
    },
    {
-      id: 3,
+      id: 4,
       name: 'Vegetables',
       title: 'Foster Farms Takeout Crispy Classic Buffalo Wings',
       price: '$50.99',
@@ -58,6 +60,17 @@ const ProductData = [
       offer: '10% Off',
       image: productFour,
       image2: product4,
+   },
+   {
+      id: 5,
+      name: 'Vegetables',
+      title: 'Blue Diamond Almonds Lightly Salted Vegetables',
+      price: '$20.99',
+      discount: '$10.99',
+      rating: '3.5',
+      offer: '-14% Off',
+      image: productFive,
+      image2: product5,
    },
 ];
 
