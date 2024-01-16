@@ -72,6 +72,17 @@ const ProductData = [
       image: productFive,
       image2: product5,
    },
+   {
+      id: 5,
+      name: 'Vegetables',
+      title: 'Blue Diamond Almonds Lightly Salted Vegetables',
+      price: '$20.99',
+      discount: '$10.99',
+      rating: '3.5',
+      offer: '-14% Off',
+      image: productFive,
+      image2: product5,
+   },
 ];
 
 const BannerData = [
