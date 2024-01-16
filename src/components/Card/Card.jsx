@@ -1,51 +1,13 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Rating from '@mui/material/Rating';
 import { AiOutlineHeart, AiOutlineSwap, AiOutlineEye } from 'react-icons/ai';
 import { FaTruckArrowRight } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
-const getRandomColor = () => {
-   const colors = [
-      '#E7EAF3',
-      '#F3E8E8',
-      '#BCE3C9',
-      '#F5D372',
-      '#D6D4E0',
-      '#FFB6B6',
-      '#AEDFF7',
-      '#FFD966',
-      '#C7CEEA',
-      '#FFA07A',
-      '#FFDAB9',
-      '#C0C4CF',
-      '#FFE4B5',
-      '#ADD8E6',
-      '#F0FFF0',
-   ];
-
-   const randomIndex = Math.floor(Math.random() * colors.length);
-   const selectedColor = colors[randomIndex];
-
-   const hexColor = selectedColor.replace(/^#/, '');
-   const r = parseInt(hexColor.substring(0, 2), 16);
-   const g = parseInt(hexColor.substring(2, 4), 16);
-   const b = parseInt(hexColor.substring(4, 6), 16);
-   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-
-   const textColor = brightness > 128 ? '#000' : '#fff';
-
-   return { backgroundColor: selectedColor, textColor };
-};
-
 const Card = ({ productData }) => {
    const [currentImage, setCurrentImage] = useState(productData.image);
    const [hovered, setHovered] = useState(false);
-   const [colorData, setColorData] = useState(getRandomColor());
-
-   useEffect(() => {
-      setColorData(getRandomColor());
-   }, []);
 
    const handleMouseMove = (event) => {
       if (!hovered) {
@@ -66,17 +28,11 @@ const Card = ({ productData }) => {
 
    return (
       <div
-         className='p-6 w-full h-auto cardDesign relative'
+         className='p-6 w-full cardDesign relative'
          onMouseMove={handleMouseMove}
          onMouseLeave={handleMouseLeave}
       >
-         <span
-            className='badge absolute top-0 left-0 z-[99]  text-bold'
-            style={{
-               backgroundColor: colorData.backgroundColor,
-               color: colorData.textColor,
-            }}
-         >
+         <span className='badge absolute top-0 left-0 z-[99] text-white'>
             {productData.offer}
          </span>
          <div className='imgWrapper relative'>

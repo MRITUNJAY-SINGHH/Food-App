@@ -23,6 +23,8 @@ import productEight from '../assets/product-8-1.jpg';
 import product8 from '../assets/product-8-2.jpg';
 import productNine from '../assets/product-9-1.jpg';
 import product9 from '../assets/product-9-2.jpg';
+import productTen from '../assets/product-10-1.jpg';
+import product10 from '../assets/product-10-2.jpg';
 
 const ProductData = [
    {
@@ -104,7 +106,7 @@ const ProductData = [
    },
    {
       id: 8,
-      name: 'Snack',
+      name: 'Cream',
       title: 'Encore Seafoods Stuffed Alaskan Salmon',
       price: '$25.99',
       discount: '$19.99',
@@ -114,15 +116,26 @@ const ProductData = [
       image2: product8,
    },
    {
-      id: 9,
+      id: 10,
       name: 'Meats',
       title: 'Gorton’s Beer Battered Fish Fillets with soft paper',
       price: '$6.99',
       discount: '$4.0',
       rating: '4.0',
-      offer: '',
+      offer: 'New',
       image: productNine,
       image2: product9,
+   },
+   {
+      id: 9,
+      name: 'Home & Cleaning',
+      title: 'Haagen-Dazs Caramel Cone Ice Cream Ketchup',
+      price: '$16.99',
+      discount: '$8.0',
+      rating: '5.0',
+      offer: 'Hot-New',
+      image: productTen,
+      image2: product10,
    },
 ];
 
