@@ -15,6 +15,14 @@ import productFour from '../assets/product-4-1.jpg';
 import product4 from '../assets/product-4-2.jpg';
 import productFive from '../assets/product-5-1.jpg';
 import product5 from '../assets/product-5-2.jpg';
+import productSix from '../assets/product-6-1.jpg';
+import product6 from '../assets/product-6-2.jpg';
+import productSeven from '../assets/product-7-1.jpg';
+import product7 from '../assets/product-7-2.jpg';
+import productEight from '../assets/product-8-1.jpg';
+import product8 from '../assets/product-8-2.jpg';
+import productNine from '../assets/product-9-1.jpg';
+import product9 from '../assets/product-9-2.jpg';
 
 const ProductData = [
    {
@@ -80,8 +88,41 @@ const ProductData = [
       discount: '$15.99',
       rating: '4.0',
       offer: '-10% Off',
-      image: productFive,
-      image2: product5,
+      image: productSix,
+      image2: product6,
+   },
+   {
+      id: 7,
+      name: 'Meats',
+      title: 'Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g',
+      price: '$20.99',
+      discount: '$9.99',
+      rating: '4.3',
+      offer: '-10% Off',
+      image: productSeven,
+      image2: product7,
+   },
+   {
+      id: 8,
+      name: 'Snack',
+      title: 'Encore Seafoods Stuffed Alaskan Salmon',
+      price: '$25.99',
+      discount: '$19.99',
+      rating: '4.1',
+      offer: 'Hot',
+      image: productEight,
+      image2: product8,
+   },
+   {
+      id: 9,
+      name: 'Meats',
+      title: 'Gorton’s Beer Battered Fish Fillets with soft paper',
+      price: '$6.99',
+      discount: '$4.0',
+      rating: '4.0',
+      offer: '',
+      image: productNine,
+      image2: product9,
    },
 ];
 
