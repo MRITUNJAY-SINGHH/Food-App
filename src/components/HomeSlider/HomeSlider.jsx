@@ -28,7 +28,7 @@ export default function HomeSlider() {
 
    return (
       <section className='px-4 pt-0 pb-6'>
-         <div className='w-full rounded-2xl overflow-hidden relative'>
+         <div className='w-full overflow-hidden relative'>
             <Carousel
                responsive={responsive}
                showDots={true}
@@ -43,7 +43,11 @@ export default function HomeSlider() {
                dotListClass='custom-dot-list'
             >
                <div>
-                  <img src={sliderImage1} alt='slider' className='w-full' />
+                  <img
+                     src={sliderImage1}
+                     alt='slider'
+                     className='w-full mt-[2rem]  rounded-[15px]'
+                  />
                   <div className='absolute top-1/2 left-[-80px] transform -translate-x-72 -translate-y-1/2 text-center w-full z-10'>
                      <h2 className='text-7xl text-gray-800 font-bold mb-5'>
                         Don’t miss amazing
