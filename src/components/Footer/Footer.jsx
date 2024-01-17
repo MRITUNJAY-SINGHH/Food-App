@@ -92,7 +92,7 @@ const Footer = () => {
                         <img src={data.icon} alt='' />
                      </div>
                      <div className='ml-4'>
-                        <h2 className='text-[#253D4E] dark:text-white text-xl mb-2 font-bold'>
+                        <h2 className='text-[#253D4E] dark:text-black text-xl mb-2 font-bold'>
                            {data?.title}
                         </h2>
                         <h4>{data?.text}</h4>
