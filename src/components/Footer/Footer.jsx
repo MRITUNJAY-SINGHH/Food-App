@@ -2,15 +2,47 @@
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
 import banner from '../../assets/banner-9.png';
-// import icon1 from '../../assets/icon-1.png';
-// import icon2 from '../../assets/icon-2.png';
-// import icon3 from '../../assets/icon-3.png';
-// import icon4 from '../../assets/icon-4.png';
-// import icon5 from '../../assets/icon-5.svg';
+import icon1 from '../../assets/icon-1.svg';
+import icon2 from '../../assets/icon-2.svg';
+import icon3 from '../../assets/icon-3.svg';
+import icon4 from '../../assets/icon-4.svg';
+import icon5 from '../../assets/icon-5.svg';
 import './Footer.css';
 import { FaEnvelope } from 'react-icons/fa6';
 
 const Footer = () => {
+   const FooterData = [
+      {
+         id: 1,
+         icon: icon1,
+         title: 'Best prices & offers',
+         text: 'Orders $50 or more',
+      },
+      {
+         id: 2,
+         icon: icon2,
+         title: 'Fast services',
+         text: '24/7 amazing services',
+      },
+      {
+         id: 3,
+         icon: icon3,
+         title: 'Great daily deal',
+         text: 'When you sign up',
+      },
+      {
+         id: 4,
+         icon: icon4,
+         title: 'Wide assortment',
+         text: 'Mega Discounts',
+      },
+      {
+         id: 5,
+         icon: icon5,
+         title: 'Within 30 days',
+         text: 'Easy returns',
+      },
+   ];
    return (
       <>
          <footer className='py-3 dark:bg-gray-900'>
@@ -32,15 +64,15 @@ const Footer = () => {
                         <span className='text-[#29A56C]'>Our Mart</span>
                      </h3>
                   </div>
-                  <div className='flex items-center gap-5 mt-10 outline-none border-none'>
+                  <div className='flex items-center gap-2 mt-10 outline-none border-none'>
                      <input
                         type='email'
                         name='email'
                         id='email'
                         placeholder='Subscribe for latest updates'
-                        className='px-8 py-3 rounded-[25px] border-2 border-gray-300 focus:outline-none focus:border-indigo-500 dark:text-black dark:placeholder:text-black'
+                        className='px-8 py-3 rounded-[25px] border-2 border-gray-300 focus:outline-none focus:border-green-500 dark:text-black dark:placeholder:text-black'
                      />
-                     <button className='flex items-center gap-2 bg-indigo-500 text-white px-4 py-2 rounded-[25px] hover:bg-indigo-700 transition-colors duration-200'>
+                     <button className='flex items-center gap-2 bg-green-500 text-white px-8 py-3 rounded-[25px] hover:bg-green-700 transition-colors duration-200'>
                         <FaEnvelope />
                         Subscribe
                      </button>
@@ -49,6 +81,24 @@ const Footer = () => {
                <div className='banner-9'>
                   <img src={banner} alt='' />
                </div>
+            </div>
+            <div className='grid grid-cols-5 gap-4 mx-5 mt-16 mb-24'>
+               {FooterData.map((data, i) => (
+                  <div
+                     key={i}
+                     className='bg-[#F4F6FA] flex items-center p-4 rounded-lg'
+                  >
+                     <div className='rounded-xl p-[20px]'>
+                        <img src={data.icon} alt='' />
+                     </div>
+                     <div className='ml-4'>
+                        <h2 className='text-[#253D4E] dark:text-white text-xl mb-2 font-bold'>
+                           {data?.title}
+                        </h2>
+                        <h4>{data?.text}</h4>
+                     </div>
+                  </div>
+               ))}
             </div>
             <div className='container-xxl'>
                <div className='flex justify-evenly items-center '>
