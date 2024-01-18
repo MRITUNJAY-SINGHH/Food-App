@@ -37,7 +37,7 @@ export default function HomeSlider() {
                autoPlaySpeed={3000}
                transitionDuration={500}
                // removeArrowOnDeviceType={['tablet', 'mobile']}
-               customButtonGroup={<></>} // This is to remove
+               customButtonGroup={<></>} // This
                customLeftArrow={<CustomLeftArrow />}
                customRightArrow={<CustomRightArrow />}
                dotListClass='custom-dot-list'
