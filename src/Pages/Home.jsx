@@ -25,7 +25,7 @@ import productNine from '../assets/product-9-1.jpg';
 import product9 from '../assets/product-9-2.jpg';
 import productTen from '../assets/product-10-1.jpg';
 import product10 from '../assets/product-10-2.jpg';
-import banner4 from '../assets/banner-4.png';
+import DailyDeal from './DailylDeal';
 
 const ProductData = [
    {
@@ -226,30 +226,7 @@ const Home = () => {
          {/* Popular Products section end */}
 
          {/*Daily Best Sells Start*/}
-         <div className='p-6  banner-img '>
-            <div className='px-6 pb-10'>
-               <h1 className='commonHeading '>Daily Best Sells</h1>
-            </div>
-            <div className='relative'>
-               <div>
-                  <img
-                     src={banner4}
-                     alt='banner4'
-                     className='rounded-[15px] h-[550px] bg-cover'
-                  />
-               </div>
-               <div className='absolute top-10 left-10'>
-                  <div className='max-w-[280px] flex justify-center items-center'>
-                     <h2 className='text-[40px] text-[#253D4E] leading-12 font-bold'>
-                        Bring nature into your home
-                     </h2>
-                  </div>
-                  <div>
-                     <button>shop</button>
-                  </div>
-               </div>
-            </div>
-         </div>
+         <DailyDeal />
          {/*Daily Best Sells End*/}
       </div>
    );
